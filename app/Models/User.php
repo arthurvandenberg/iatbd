@@ -44,6 +44,6 @@ class User extends Authenticatable
     protected $table = "users";
 
     public function allPets(){
-        return $this->hasMany('\App\Models\Pet', 'id', 'owner_id');
+        return $this->hasMany('\App\Models\Pet', 'owner_id', 'id');
     }
 }

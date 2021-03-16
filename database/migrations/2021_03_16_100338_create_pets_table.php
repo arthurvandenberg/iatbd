@@ -17,12 +17,12 @@ class CreatePetsTable extends Migration
             $table->id();
             $table->foreignId('owner_id')->constrained('users');
             $table->string('name');
-            $table->string('kind_of_pet');
-            $table->foreign('kind_of_pet')->references('kind')->on('kind_of_pet');
+            $table->string('kind');
+            $table->foreign('kind')->references('kind')->on('kind_of_pet');
             $table->boolean('available');
-            $table->string('available_date');
-            $table->string('length_of_stay');
-            $table->string('compensation_ammount');
+            $table->string('available_date')->nullable();
+            $table->string('length_of_stay')->nullable();
+            $table->string('compensation_amount')->nullable();
         });
     }
 
@@ -35,7 +35,7 @@ class CreatePetsTable extends Migration
     {
         Schema::table('pets', function (Blueprint $table) {
             $table->dropForeign('pets_owner_id_foreign');
-            $table->dropForeign('pets_kind_of_pet_foreign');
+            $table->dropForeign('pets_kind_foreign');
         });
 
         Schema::dropIfExists('pets');
