@@ -37,5 +37,23 @@ class UserSeeder extends Seeder
             'email' => 'linda@miner.nl',
             'password' => bcrypt('LOLWATZEURENDIEGAMERSNOU'),
         ]);
+        
+        DB::table('users')->insert([
+            'name' => 'Theo Tether',
+            'email' => 'theo@miner.nl',
+            'password' => bcrypt('IKWASNETTELAATMETBITCOIN'),
+        ]);
+        
+        DB::table('users')->insert([
+            'name' => 'Priscilla Polkadot',
+            'email' => 'priscilla@miner.nl',
+            'password' => bcrypt('DOGECOINISDEHYPEGOZER'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Carlo Cardano',
+            'email' => 'carlo@miner.nl',
+            'password' => bcrypt('IKSNAPHIEREIGENLIJKNIKSVAN'),
+        ]);
     }
 }
