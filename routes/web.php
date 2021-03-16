@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/pets', [\App\Http\Controllers\PetController::class, 'index']);
+Route::get('/pets/{id}', [\App\Http\Controllers\PetController::class, 'show']);
+
+Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
+Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
+
 Route::get('/', function () {
     return view('welcome');
 });

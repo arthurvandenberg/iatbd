@@ -21,9 +21,21 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'Danni Heuts',
-            'email' => 'danni@heuts.com',
-            'password' => bcrypt('MEERDIERENDIERENDIEREN'),
+            'name' => 'Benny Bitcoin',
+            'email' => 'ben@miner.nl',
+            'password' => bcrypt('OMGGRATISGELDMINEN'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Eddy Etherium',
+            'email' => 'ed@miner.com',
+            'password' => bcrypt('GPUSZIJNOMCOINSTEMINEN'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Linda Litecoin',
+            'email' => 'linda@miner.nl',
+            'password' => bcrypt('LOLWATZEURENDIEGAMERSNOU'),
         ]);
     }
 }
