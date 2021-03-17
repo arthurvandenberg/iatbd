@@ -1,0 +1,32 @@
+.petCatalog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10rem;
+}
+
+.petCard {
+    padding: 1rem;
+}
+
+.petCard__text {
+    padding: 1rem 0;
+}
+
+.petCard__petInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.petCard__button {
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    background-color: none;
+    border: 2px solid #ff896b;
+    border-radius: 5px;
+    color: #ff896b;
+}
+
+.petCard__button:hover{
+    cursor: pointer;
+}
