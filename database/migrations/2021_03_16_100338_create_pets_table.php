@@ -18,6 +18,7 @@ class CreatePetsTable extends Migration
             $table->foreignId('owner_id')->constrained('users');
             $table->string('name');
             $table->string('kind');
+            $table->string('image');
             $table->foreign('kind')->references('kind')->on('kind_of_pet');
             $table->boolean('available');
             $table->string('available_date')->nullable();

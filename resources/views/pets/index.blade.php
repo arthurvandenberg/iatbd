@@ -1,12 +1,13 @@
 @extends('layouts.main')
 
 @section('styles')
-<link rel="stylesheet" href="css/pets/catalog.css">
+<link rel="stylesheet" href="{{asset('css/pets/catalog.css')}}">
 @endsection
 
 @section('metaTitle', 'De sterren van de show!')
 
 @section('content')
+    <h1 class="page__title">Dierenoverzicht</h1>
     <div class="petCatalog">
         @foreach($pets as $pet)
         @if($pet->available === 1)
@@ -16,17 +17,16 @@
                 </figure>
                 <section class="petCard__text">
                     <section class="petCard__petInfo">
-                        <p>{{$pet->name}}</p>
-                        <p>{{$pet->kind}}</p>
+                        <h2>{{$pet->name}}</h2>
+                        <sub>{{$pet->kind}}</sub>
                     </section>
                     <section class="petCard__info">
                         <p>Beschikbaar vanaf: {{$pet->available_date}}</p>
                         <p>Duur van verblijf: {{$pet->length_of_stay}}</p>
-                        <p>Vergoeding: {{$pet->compensation_amount}}</p>
                     </section>
                 </section>
                 <section class="petCard__btnSection">
-                    <button class="petCard__button">Bied je aan!</button>
+                    <a class="petCard__button" href="/pets/{{{$pet->id}}}">Bekijk de pagina van {{$pet->name}}!</a>
                 </section>
             </article>
         @endif

@@ -13,6 +13,9 @@ class PetController extends Controller
     }
 
     public function show($id) {
-        return \App\Models\Pet::find($id);
+        return view('pets.show', [
+            'pet' => \App\Models\Pet::find($id),
+            'owner' => \App\Models\Pet::find($id)->getOwner,
+        ]);
     }
 }

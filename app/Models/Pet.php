@@ -9,7 +9,7 @@ class Pet extends Model
 {
     protected $table = "pets";
 
-    public function petModel(){
+    public function getOwner(){
         return $this->belongsTo("\App\Models\User", "owner_id", "id");
     }
 }

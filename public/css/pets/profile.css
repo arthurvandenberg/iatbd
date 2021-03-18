@@ -1,0 +1,12 @@
+.petProfile {
+    margin-top: 5rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 55% 40%;
+    grid-template-rows: 1fr;
+    gap: 5%;
+}
+
+.petProfile__image {
+    width: 100%;
+}
