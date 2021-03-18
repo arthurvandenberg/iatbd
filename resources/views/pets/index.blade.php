@@ -26,7 +26,7 @@
                     </section>
                 </section>
                 <section class="petCard__btnSection">
-                    <a class="petCard__button" href="/pets/{{{$pet->id}}}">Bekijk de pagina van {{$pet->name}}!</a>
+                    <a class="petCard__button" href="/pets/{{{$pet->id}}}">Bekijk het profiel van {{$pet->name}}!</a>
                 </section>
             </article>
         @endif

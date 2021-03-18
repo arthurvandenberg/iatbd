@@ -1,13 +1,17 @@
 .petCatalog {
     margin: 2rem 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 22.5%);
     grid-template-rows: 1fr;
-    gap: 10rem;
+    gap: 3.33%;
 }
 
 .petCard {
-    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ebe6e6;
+    border-radius: 8px;
 }
 
 .petCard__image {
@@ -21,13 +25,17 @@
 }
 
 .petCard__text {
-    padding: 1rem 0;
+    padding: 1rem 2rem;
 }
 
 .petCard__petInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.petCard__btnSection {
+    padding: 1rem 2rem 2rem;
 }
 
 .petCard__button {
@@ -38,7 +46,8 @@
     box-sizing: border-box;
     border: 2px solid #ff896b;
     border-radius: 5px;
-    color: #ff896b;
+    background: #ff896b;
+    color: #f3f3f3;
 }
 
 .petCard__button:hover{
