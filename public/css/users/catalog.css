@@ -3,7 +3,8 @@
     display: grid;
     grid-template-columns: repeat(4, 23.5%);
     grid-template-rows: 1fr;
-    gap: 2rem;
+    gap: 3rem;
+    column-gap: 2%;
 }
 
 .userCard {
