@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index() {
-        return \App\Models\User::all();
+        return view('user.index', [
+            'users' => \App\Models\User::all(),
+        ]);
     }
 
     public function show($id) {
-        return \App\Models\User::find($id);
+        return view('user.show', [
+            'user' => \App\Models\User::find($id),
+        ]);
     }
 }

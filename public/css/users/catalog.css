@@ -1,4 +1,4 @@
-.petCatalog {
+.userCatalog{
     margin: 2rem 0;
     display: grid;
     grid-template-columns: repeat(4, 23.5%);
@@ -6,7 +6,7 @@
     gap: 2rem;
 }
 
-.petCard {
+.userCard {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -15,40 +15,37 @@
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
 }
 
-.petCard__image {
+.userCard__image {
     width: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
 
-.petCard__figure {
+.userCard__figure {
     width: 100%;
 }
 
-.petCard__text {
+.userCard__text {
     padding: 1rem 2rem;
 }
 
-.petCard__petInfo {
+.userCard__petInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.petCard__petInfo h2 {
-    font-weight: 400;
-}
-.petCard__info p {
+.userCard__info p {
     display: flex;
     justify-content: space-between;
 }
 
-.petCard__btnSection {
+.userCard__btnSection {
     padding: 1rem 2rem 2rem;
 }
 
-.petCard__button {
+.userCard__button {
     appearance: button;
     font-size: initial;
     text-decoration: none;
@@ -62,6 +59,6 @@
     text-align: center;
 }
 
-.petCard__button:hover{
+.userCard__button:hover{
     cursor: pointer;
 }

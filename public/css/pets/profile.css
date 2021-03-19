@@ -2,11 +2,48 @@
     margin-top: 5rem;
     width: 100%;
     display: grid;
-    grid-template-columns: 55% 40%;
+    grid-template-columns: 65% 30%;
     grid-template-rows: 1fr;
     gap: 5%;
 }
 
+.petProfile__title {
+    font-weight: 400;
+}
+
+.petProfile__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.petProfile__info > div {
+    margin-bottom: 2rem;
+}
+
 .petProfile__image {
     width: 100%;
+}
+
+.petProfile__stayInfo > p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.petProfile__btnSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.petProfile__button {
+    appearance: button;
+    font-size: initial;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    width: fit-content;
+    box-sizing: border-box;
+    border: 2px solid #ff896b;
+    border-radius: 5px;
+    background: #ff896b;
+    color: #f3f3f3;
 }

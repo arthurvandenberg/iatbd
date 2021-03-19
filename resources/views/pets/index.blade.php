@@ -21,8 +21,8 @@
                         <sub>{{$pet->kind}}</sub>
                     </section>
                     <section class="petCard__info">
-                        <p>Beschikbaar vanaf: {{$pet->available_date}}</p>
-                        <p>Duur van verblijf: {{$pet->length_of_stay}}</p>
+                        <p>Beschikbaar vanaf: <span>{{$pet->available_date}}</span></p>
+                        <p>Duur van verblijf: <span>{{$pet->length_of_stay}}</span></p>
                     </section>
                 </section>
                 <section class="petCard__btnSection">

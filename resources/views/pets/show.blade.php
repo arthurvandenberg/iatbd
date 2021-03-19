@@ -15,13 +15,20 @@
         </div>
         <div class="petProfile__info">
             <div class="petProfile__petInfo">
-                <h1>{{$pet->name}} de {{$pet->kind}}</h1>
+                <h1 class="petProfile__title">{{$pet->name}} de {{$pet->kind}}</h1>
                 <sub>Eigenaar: {{$owner->name}}</sub>
+            </div>
+            <div class="petProfile__description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam laborum perspiciatis eveniet nostrum voluptas? Commodi veritatis expedita, quibusdam atque totam natus incidunt laudantium sapiente pariatur odit cum similique quod dolor.</p>
             </div>
             <div class="petProfile__stayInfo">
                 <p>Beschikbaar vanaf: <span>{{$pet->available_date}}</span></p>
                 <p>Duur van verblijf: <span>{{$pet->length_of_stay}}</span></p>
                 <p>Vergoeding: <span>{{$pet->compensation_amount}}</span></p>
+            </div>
+            <div class="petProfile__btnSection">
+                Wil jij op {{$pet->name}} passen?
+                <a href="#" class="petProfile__button">Bied je aan!</a>
             </div>
         </div>
     </div>

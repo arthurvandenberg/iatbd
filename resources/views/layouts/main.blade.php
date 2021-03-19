@@ -15,7 +15,12 @@
                 <ul class="header__list">
                     <li class="header__item"><a class="header__link" href="/pets">Dieren</a></li>
                     <li class="header__item"><a class="header__link" href="/users">Oppassers</a></li>
-                    <li class="header__item"><a class="header__link" href="/">Log in</a></li>
+                    @guest 
+                        <li class="header__item"><a class="header__link" href="/">Log in</a></li>
+                    @endguest
+                    @auth 
+                        <li class="header__item"><a class="header__link" href="/">Log uit</a></li>
+                    @endauth
                 </ul>
             </nav>
         </header>
@@ -23,6 +28,28 @@
             @yield('preContent')
             <div class="page__wrapper">@yield('content')</div>
         </main>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <div class="footer__links">
+                <div class="footer__column">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Algemene voorwaarden</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Huisregels</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Meest gestelde vragen</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Nieuwsbrief</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Werken als Oppasser</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Je huisdier inschrijven</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Social Media</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <p>© Copyright 2021 | Barklaats</p>
+            </div>
+        </footer>
     </body>
 </html>

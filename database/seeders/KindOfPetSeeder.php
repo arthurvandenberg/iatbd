@@ -14,7 +14,7 @@ class KindOfPetSeeder extends Seeder
      */
     public function run()
     {
-        $kind_of_pets_array = ["Kat", "Hond", "Goudvis", "Cavia", "Hamster"];
+        $kind_of_pets_array = ["Kat", "Hond", "Goudvis", "Cavia", "Hamster", "Beer"];
 
         foreach($kind_of_pets_array as $kind_of_pet){
             DB::table('kind_of_pet')->insert([
