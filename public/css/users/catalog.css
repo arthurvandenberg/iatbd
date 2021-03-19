@@ -29,11 +29,19 @@
     padding: 1rem 2rem;
 }
 
-.userCard__petInfo {
+.userCard__userInfo {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 1rem;
+}
+
+.userCard__userInfo h2 {
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.userCard__userInfo h2 span {
+    font-size: 1.8rem;
 }
 
 .userCard__info p {

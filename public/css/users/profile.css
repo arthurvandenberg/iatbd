@@ -1,0 +1,49 @@
+.userProfile {
+    margin-top: 5rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 65% 30%;
+    grid-template-rows: 1fr;
+    gap: 5%;
+}
+
+.userProfile__title {
+    font-weight: 400;
+}
+
+.userProfile__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.userProfile__info > div {
+    margin-bottom: 2rem;
+}
+
+.userProfile__image {
+    width: 100%;
+}
+
+.userProfile__stayInfo > p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.userProfile__btnSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.userProfile__button {
+    appearance: button;
+    font-size: initial;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    width: fit-content;
+    box-sizing: border-box;
+    border: 2px solid #ff896b;
+    border-radius: 5px;
+    background: #ff896b;
+    color: #f3f3f3;
+}
