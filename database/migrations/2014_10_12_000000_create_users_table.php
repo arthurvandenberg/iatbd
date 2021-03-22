@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('image');
-            $table->string('preferred_animals');
+            $table->set('sits', ["Kat", "Hond", "Goudvis", "Cavia", "Hamster", "Beer"])->nullable();
             $table->boolean('blocked')->default(0);
             $table->string('password');
             $table->rememberToken();

@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function allPets(){
         return $this->hasMany('\App\Models\Pet', 'owner_id', 'id');
     }
+
+    public function sitsPets(){
+        return $this->belongsToMany('\App\Models\KindOfPet', 'kind', 'sits');
+    }
 }

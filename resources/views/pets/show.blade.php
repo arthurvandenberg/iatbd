@@ -9,6 +9,7 @@
 @endsection
 
 @section('content')
+    <a href="/pets">&larr; Terug naar het overzicht</a>
     <div class="petProfile">
         <div class="petProfile__gallery">
             <img class="petProfile__image" src="{{asset($pet->image)}}"/>
@@ -28,7 +29,12 @@
             </div>
             <div class="petProfile__btnSection">
                 Wil jij op {{$pet->name}} passen?
-                <a href="#" class="petProfile__button">Bied je aan!</a>
+                @auth
+                    <a href="#" class="petProfile__button">Bied je aan!</a>
+                @endauth
+                @guest
+                    <a href="#" class="petProfile__button">Log in om je aan te bieden!</a>
+                @endguest
             </div>
         </div>
     </div>
