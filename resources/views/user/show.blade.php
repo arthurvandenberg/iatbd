@@ -17,7 +17,7 @@
             <div class="userProfile__userInfo">
                 <h1 class="userProfile__title">{{$user->name}} {{$user->lastname}}</h1>
                 <p>{{$user->age}} jaar</p>
-                <p>Past op: {{$user->sits}}</p>
+                <p>{{$user->hometown}}</p>
             </div>
             <div class="userProfile__description">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam laborum perspiciatis eveniet nostrum voluptas? Commodi veritatis expedita, quibusdam atque totam natus incidunt laudantium sapiente pariatur odit cum similique quod dolor.</p>

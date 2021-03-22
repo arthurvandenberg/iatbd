@@ -21,7 +21,7 @@
                     <section class="userCard__text">
                         <section class="userCard__userInfo">
                             <h2>{{$user->name}} <span>({{$user->age}})</span></h2>
-                            <sub>Past op: <span>{{$user->sits}}</span></sub>
+                            <sub>{{$user->hometown}}</sub>
                         </section>
                     </section>
                     <section class="userCard__btnSection">

@@ -16,10 +16,18 @@
                     <li class="header__item"><a class="header__link" href="/pets">Dieren</a></li>
                     <li class="header__item"><a class="header__link" href="/users">Oppassers</a></li>
                     @guest 
-                        <li class="header__item"><a class="header__link" href="/">Log in</a></li>
+                        <li class="header__item register__button"><a class="header__link" href="/login">Log in / Meld je aan</a></li>
                     @endguest
                     @auth 
-                        <li class="header__item"><a class="header__link" href="/">Log uit</a></li>
+                        <li class="header__item">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">
+                                {{ __('Log uit') }}
+                            </x-dropdown-link>
+                        </form>
+                        </li>
                     @endauth
                 </ul>
             </nav>

@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'email' => 'avdberg95@gmail.com',
             'password' => bcrypt('DIERENDIERENDIEREN'),
             'image' => 'img/users/arthur/arthur_1.jpg',
-            'sits' => 'Hond',
+            'hometown' => 'Oude Wetering',
         ]);
 
         DB::table('users')->insert([
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
             'email' => 'ben@miner.nl',
             'password' => bcrypt('OMGGRATISGELDMINEN'),
             'image' => 'img/users/benny/benny_1.jpg',
-            'sits' => 'Hamster',
+            'hometown' => 'Breda',
         ]);
 
         DB::table('users')->insert([
@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
             'email' => 'ed@miner.com',
             'password' => bcrypt('GPUSZIJNOMCOINSTEMINEN'),
             'image' => 'img/users/eddy/eddy_1.jpg',
-            'sits' => 'Goudvis',
+            'hometown' => 'Eindhoven',
         ]);
 
         DB::table('users')->insert([
@@ -51,7 +51,7 @@ class UserSeeder extends Seeder
             'email' => 'linda@miner.nl',
             'password' => bcrypt('LOLWATZEURENDIEGAMERSNOU'),
             'image' => 'img/users/linda/linda_1.jpg',
-            'sits' => 'Cavia',
+            'hometown' => 'Leiden',
         ]);
         
         DB::table('users')->insert([
@@ -61,7 +61,7 @@ class UserSeeder extends Seeder
             'email' => 'theo@miner.nl',
             'password' => bcrypt('IKWASNETTELAATMETBITCOIN'),
             'image' => 'img/users/theo/theo_1.jpg',
-            'sits' => 'Hond',
+            'hometown' => 'Tilburg',
         ]);
         
         DB::table('users')->insert([
@@ -71,7 +71,7 @@ class UserSeeder extends Seeder
             'email' => 'priscilla@miner.nl',
             'password' => bcrypt('DOGECOINISDEHYPEGOZER'),
             'image' => 'img/users/priscilla/priscilla_1.jpg',
-            'sits' => 'Kat',
+            'hometown' => 'Purmerend',
         ]);
 
         DB::table('users')->insert([
@@ -81,7 +81,7 @@ class UserSeeder extends Seeder
             'email' => 'carlo@miner.nl',
             'password' => bcrypt('IKSNAPHIEREIGENLIJKNIKSVAN'),
             'image' => 'img/users/carlo/carlo_1.jpg',
-            'sits' => 'Goudvis',
+            'hometown' => 'Culemborg',
         ]);
 
         DB::table('users')->insert([
@@ -91,7 +91,7 @@ class UserSeeder extends Seeder
             'email' => 'c.robin@disney.nl',
             'password' => bcrypt('HELPMEAUBVANDIEBEERAF:('),
             'image' => 'img/users/christopher/christopher_1.jpg',
-            'sits' => 'Beer',
+            'hometown' => 'Londen',
             'blocked' => 1,
         ]);
     }
