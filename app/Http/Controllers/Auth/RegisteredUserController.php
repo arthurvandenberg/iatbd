@@ -34,15 +34,26 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'birthday' => 'required|date',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
+            'hometown' => 'required|string|max:255',
         ]);
+
+        $birthDate = explode("-", $request->birthday);
+        $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[2], $birthDate[1], $birthDate[0]))) > date("md")
+        ? ((date("Y") - $birthDate[0]) - 1)
+        : (date("Y") - $birthDate[0]));
 
         Auth::login($user = User::create([
             'name' => $request->name,
+            'lastname' => $request->lastname,
+            'age' => $age,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-        ]));
+            'hometown' => $request->hometown,
+            ]));
 
         event(new Registered($user));
 

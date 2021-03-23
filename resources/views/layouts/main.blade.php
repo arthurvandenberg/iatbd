@@ -19,6 +19,7 @@
                         <li class="header__item register__button"><a class="header__link" href="/login">Log in / Meld je aan</a></li>
                     @endguest
                     @auth 
+                        <li class="header__item"><a class="header__link" href="/dashboard">Dashboard</a></li>
                         <li class="header__item">
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

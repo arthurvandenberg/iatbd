@@ -17,6 +17,24 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
+            <div class="auth__field">
+                <x-label for="lastname" :value="__('Last Name')" />
+
+                <x-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus />
+            </div>
+
+            <div class="auth__field">
+                <x-label for="birthday" :value="__('Date of Birth')" />
+
+                <x-input id="birthday" class="block mt-1 w-full" type="date" name="birthday" :value="old('birthday')" required autofocus />
+            </div>
+
+            <div class="auth__field">
+                <x-label for="hometown" :value="__('Home Town')" />
+
+                <x-input id="hometown" class="block mt-1 w-full" type="text" name="hometown" :value="old('hometown')" required autofocus />
+            </div>
+
             <!-- Email Address -->
             <div class="auth__field">
                 <x-label for="email" :value="__('Email')" />
