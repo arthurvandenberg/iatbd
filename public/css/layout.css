@@ -125,6 +125,10 @@ a {
     align-items: center;
 }
 
+.auth__card {
+    max-width: 50%;
+}
+
 .auth__card-logo {
     margin-bottom: 2rem;
     text-align: center;
@@ -138,4 +142,116 @@ a {
     background-color: #ebe6e6;
     border-radius: 8px;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.auth__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth__label {
+    margin-bottom: 0.5rem;
+    position:relative;
+}
+
+.auth__label-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 3rem;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.auth__label-checkbox:hover .auth__checkmark {
+    background-color: #f3f3f3;
+}
+
+.auth__label-checkbox input:checked ~ .auth__checkmark {
+    background-color: #ff896b;
+}
+
+.auth__label-checkbox input:checked ~ .auth__checkmark:after {
+    display: block;
+}
+
+.auth__label-checkbox .auth__checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.auth__input {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 0.8rem;
+}
+
+.auth__input:focus {
+    outline: none;
+    outline-offset: 0px;
+    border-color: #ff896b;
+}
+
+.auth__input-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.auth__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.auth__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.auth__submit {
+    display:flex;
+    flex-direction: column-reverse;
+    margin-top: 1rem;
+}
+
+.auth__forgot {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.auth__button {
+    font-size: initial;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    border: 2px solid #ff896b;
+    border-radius: 5px;
+    background: #ff896b;
+    text-align: center;
+    color: #f3f3f3;
+    margin-bottom: 1rem;
+}
+
+.auth__register-link {
+    font-size: 1.5rem;
 }

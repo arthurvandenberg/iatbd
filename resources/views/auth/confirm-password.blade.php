@@ -1,9 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            <a href="/" class="header__title-link"><h2 class="header__title">Barkplaats 🐶</h2></a>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
