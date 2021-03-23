@@ -1,4 +1,4 @@
-## PassenOpJeDier.nl 
+## Barkplaats.nl 
 
 Je gaat op vakantie, voor werk de deur uit, of je moet echt even weg en kan je nieuwe Labradoodle echt niet alleen laten. PassenOpJeDier biedt een oplossing. 
 Bij dit platform kan je na registratie jezelf aanbieden als oppas voor bepaalde soorten huisdieren. Dit doe je aan de hand van een profiel waarop je foto's en eventueel video's van je huis kan laten zien zodat een huisdiereigenaar weet dat zijn/haar dier in goede handen is. 
