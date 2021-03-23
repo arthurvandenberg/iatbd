@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/register', [\App\Http\Controllers\RegistrationController::class, 'create']);
-
 Route::get('/pets', [\App\Http\Controllers\PetController::class, 'index']);
 Route::get('/pets/{id}', [\App\Http\Controllers\PetController::class, 'show']);
 
