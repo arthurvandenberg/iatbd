@@ -14,27 +14,10 @@
 
 @section('content')
     <div class="dashboard__wrapper">
-        <div>
-            <div>
-                {{ __('Welcome, ') . $user->name . '!'}}
-            </div>
-            <br>
-            <div>
-                <ul>
-                    @foreach($pets_of_user as $pet)
-                        <li>
-                            {{$pet->name}}
-                            <form method="POST" action="/pets/{{$pet->id}}/delete">
-                                @csrf
-                                <x-button>{{__('Delete')}}</x-button>
-                            </form>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-            <br>
-            <div>
-                {{ __('Sign your pet up: ') }}
+        <h1 class="dashboard__title">{{ __('Welcome, ') . $user->name . '!'}}</h1>
+        <div class="dashboard__pet-wrapper">
+            <div class="dashboard__column">
+            <h2 class="dashboard__column-title">{{ __('Sign your pet up: ') }}</h2>
                 <form method="POST" action="/pets/create">
                     @csrf
                     <div class="auth__field">
@@ -43,7 +26,7 @@
                     </div>
                     <div class="auth__field">
                         <x-label for="kind" :value="__('Kind')" />
-                        <select id="kind" name="kind" required autofocus>
+                        <select id="kind" name="kind" class="auth__input" required autofocus>
                             @foreach($kind_of_pets as $kind)
                                 @if($kind->kind !== 'Beer')
                                     <option :value="{{$kind->kind}}">{{$kind->kind}}</option>
@@ -54,7 +37,7 @@
                     
                     <div class="auth__field">
                         <x-label for="description" :value="__('Description')" />
-                        <textarea id="description" name="description" :value="old('description')" required autofocus></textarea>
+                        <textarea id="description" name="description" class="auth__input" :value="old('description')" rows="5" required autofocus></textarea>
                     </div>
                     
                     <div class="auth__field">
@@ -75,6 +58,20 @@
                         {{ __('Register') }}
                     </x-button>
                 </form>
+            </div>
+            <div class="dashboard__column">
+                <h2 class="dashboard__column-title">{{ __('Your Pets: ') }}</h2>
+                <ul class="dashboard__list">
+                    @foreach($pets_of_user as $pet)
+                        <li class="dashboard__list-item">
+                            <span>{{$pet->name}}</span>
+                            <form method="POST" action="/pets/{{$pet->id}}/delete">
+                                @csrf
+                                <x-button onClick="return confirm('{{__('Weet je het zeker?')}}')">{{__('Delete')}}</x-button>
+                            </form>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>

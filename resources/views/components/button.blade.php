@@ -1,3 +1,3 @@
-<button {{ $attributes->merge(['type' => 'submit', 'class' => 'auth__button', 'onClick' => 'return confirm(\'Weet je het zeker?\')']) }}>
+<button {{ $attributes->merge(['type' => 'submit', 'class' => 'auth__button']) }}>
     {{ $slot }}
 </button>
