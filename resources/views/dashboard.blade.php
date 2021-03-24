@@ -59,19 +59,33 @@
                     </x-button>
                 </form>
             </div>
-            <div class="dashboard__column">
-                <h2 class="dashboard__column-title">{{ __('Your Pets: ') }}</h2>
-                <ul class="dashboard__list">
-                    @foreach($pets_of_user as $pet)
+            <div class="dashboard__column right">
+                <div class="dashboard__row">
+                    <h2 class="dashboard__column-title">{{ __('Your Pets: ') }}</h2>
+                    <ul class="dashboard__list">
+                        @foreach($pets_of_user as $pet)
+                            <li class="dashboard__list-item">
+                                <span>{{$pet->name}}</span>
+                                <form method="POST" action="/pets/{{$pet->id}}/delete">
+                                    @csrf
+                                    <x-button onClick="return confirm('{{__('Are you sure?')}}')" class="dashboard__button">{{__('Delete')}}</x-button>
+                                </form>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="dashboard__row">
+                    <h2 class="dashboard__column-title">{{ __('Your offers: ') }}</h2>
+                    <ul class="dashboard__list">
                         <li class="dashboard__list-item">
-                            <span>{{$pet->name}}</span>
-                            <form method="POST" action="/pets/{{$pet->id}}/delete">
+                            <span>Benny wil op Henk passen!</span>
+                            <form method="GET" action="/users/2">
                                 @csrf
-                                <x-button onClick="return confirm('{{__('Weet je het zeker?')}}')">{{__('Delete')}}</x-button>
+                                <x-button class="dashboard__button">Bekijk profiel</x-button>
                             </form>
                         </li>
-                    @endforeach
-                </ul>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
