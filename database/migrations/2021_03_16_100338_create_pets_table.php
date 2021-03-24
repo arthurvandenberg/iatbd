@@ -18,12 +18,14 @@ class CreatePetsTable extends Migration
             $table->foreignId('owner_id')->constrained('users');
             $table->string('name');
             $table->string('kind');
-            $table->string('image');
+            $table->string('image')->default('img/pets/default_1.jpg');
             $table->foreign('kind')->references('kind')->on('kind_of_pet');
-            $table->boolean('available');
+            $table->string('description')->nullable();
+            $table->boolean('available')->default(1);
             $table->string('available_date')->nullable();
             $table->string('length_of_stay')->nullable();
             $table->string('compensation_amount')->nullable();
+            $table->timestamps();
         });
     }
 

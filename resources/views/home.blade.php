@@ -11,6 +11,14 @@
 @endsection
 
 @section('content')
-    <h1>Barkplaats 🐶</h1>
-    <sub>Vind hier de perfecte oppas voor jouw huisdier!</sub>
+    <div class="home__wrapper">
+        <h1>Barkplaats 🐶</h1>
+        <sub>Vind hier de perfecte oppas voor jouw huisdier!</sub>
+        @guest
+            <a href="/register" class="home__button">Meld je aan &rarr;</a>
+        @endguest
+        @auth
+            <a href="/pets" class="home__button">Bekijk het aanbod &rarr;</a>
+        @endauth
+    </div>
 @endsection

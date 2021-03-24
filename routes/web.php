@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/pets', [\App\Http\Controllers\PetController::class, 'index']);
 Route::get('/pets/{id}', [\App\Http\Controllers\PetController::class, 'show']);
+Route::post('/pets/create', [\App\Http\Controllers\PetController::class, 'store']);
+Route::post('/pets/{id}/delete', [\App\Http\Controllers\PetController::class, 'destroy']);
 
 Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
 Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);

@@ -90,6 +90,10 @@ a {
     margin-top: 2rem;
 }
 
+.page__main {
+    position: relative;
+}
+
 .footer {
     display: flex;
     align-items: center;

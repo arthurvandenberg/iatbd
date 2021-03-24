@@ -20,7 +20,7 @@
                 <sub>Eigenaar: {{$owner->name}}</sub>
             </div>
             <div class="petProfile__description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam laborum perspiciatis eveniet nostrum voluptas? Commodi veritatis expedita, quibusdam atque totam natus incidunt laudantium sapiente pariatur odit cum similique quod dolor.</p>
+                <p>{{$pet->description}}</p>
             </div>
             <div class="petProfile__stayInfo">
                 <p>Beschikbaar vanaf: <span>{{$pet->available_date}}</span></p>

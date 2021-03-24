@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->integer('age');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image')->default('/img/users/default_1.jpg');
             $table->string('hometown');
             $table->boolean('blocked')->default(0);
             $table->string('password');

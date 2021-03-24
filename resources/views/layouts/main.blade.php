@@ -16,7 +16,7 @@
                     <li class="header__item"><a class="header__link" href="/pets">Dieren</a></li>
                     <li class="header__item"><a class="header__link" href="/users">Oppassers</a></li>
                     @guest 
-                        <li class="header__item register__button"><a class="header__link" href="/login">Log in / Meld je aan</a></li>
+                        <li class="header__item register__button"><a class="header__link" href="/login">Log In</a></li>
                     @endguest
                     @auth 
                         <li class="header__item"><a class="header__link" href="/dashboard">Dashboard</a></li>
@@ -33,7 +33,7 @@
                 </ul>
             </nav>
         </header>
-        <main>
+        <main class="page__main">
             @yield('preContent')
             <div class="page__wrapper">@yield('content')</div>
         </main>

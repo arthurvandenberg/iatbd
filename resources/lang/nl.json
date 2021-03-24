@@ -12,6 +12,13 @@
     "Already registered?": "Heb je al een account?",
     "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "Wachtwoord vergeten? Geen probleem. Voer hieronder je email in en we sturen je een link om je wachtwoord te resetten.",
     "Email Password Reset Link": "Verstuur Reset Link",
-    "You're logged in!": "Je bent ingelogd!",
-    "Change your credentials:": "Pas je gegevens aan:"
+    "Welcome, ": "Welkom, ",
+    "Whoops! Something went wrong.": "Oeps! Er is iets mis gegaan.",
+    "Sign your pet up: ": "Schrijf jouw huisdier in: ",
+    "Your pet's name: ": "De naam van jouw huisdier: ",
+    "Kind": "Soort dier: ",
+    "Description": "Omschrijving: ",
+    "Available From: ": "Beschikbaar vanaf: ",
+    "Length of Stay": "Lengte van verblijf: ",
+    "Compensation Amount": "Vergoeding: "
 }
