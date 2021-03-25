@@ -79,7 +79,7 @@
                     <ul class="dashboard__list">
                         <li class="dashboard__list-item">
                             <span>Benny wil op Henk passen!</span>
-                            <form method="GET" action="/users/2">
+                            <form method="GET" action="/users/2" target="_blank">
                                 @csrf
                                 <x-button class="dashboard__button">Bekijk profiel</x-button>
                             </form>
