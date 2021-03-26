@@ -102,8 +102,11 @@
                                     </li>
                                 @elseif($request->reviewed === 0)
                                     <li class="dashboard__list-item">
-                                        <span>Tevreden over {{$request_user->name}}?</span>
-                                        <x-button class="dashboard__button">Laat een Review achter</x-button>
+                                        <span>Heeft {{$request_pet->name}} het leuk gehad bij {{$request_user->name}}?</span>
+                                        <form method="GET" action="/users/{{$request->user_id}}/reviews/create/{{$request_pet->id}}">
+                                            @csrf
+                                            <x-button class="dashboard__button">Laat een Review achter</x-button>
+                                        </form>
                                     </li>
                                 @endif
                             @endforeach

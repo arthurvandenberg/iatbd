@@ -17,7 +17,36 @@ class ReviewSeeder extends Seeder
         DB::table('reviews')->insert([
             'reviewed_user' => 2,
             'review_by' => 1,
-            'review' => "Ja was wel okee eigenlijk",
+            'title' => 'GEWELDIG!!!!1!',
+            'review' => "Nouja was wel okee eigenlijk..",
+        ]);
+
+        DB::table('reviews')->insert([
+            'reviewed_user' => 2,
+            'review_by' => 1,
+            'title' => 'GEWELDIG!!!!1!',
+            'review' => "Nouja was wel okee eigenlijk..",
+        ]);
+
+        DB::table('reviews')->insert([
+            'reviewed_user' => 2,
+            'review_by' => 1,
+            'title' => 'GEWELDIG!!!!1!',
+            'review' => "Nouja was wel okee eigenlijk..",
+        ]);
+
+        DB::table('reviews')->insert([
+            'reviewed_user' => 2,
+            'review_by' => 1,
+            'title' => 'GEWELDIG!!!!1!',
+            'review' => "Nouja was wel okee eigenlijk..",
+        ]);
+
+        DB::table('reviews')->insert([
+            'reviewed_user' => 2,
+            'review_by' => 1,
+            'title' => 'GEWELDIG!!!!1!',
+            'review' => "Nouja was wel okee eigenlijk..",
         ]);
     }
 }
