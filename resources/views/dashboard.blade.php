@@ -84,9 +84,13 @@
                     <ul class="dashboard__list">
                         @forelse($requested_pets as $pet_requests)
                             @foreach($pet_requests as $request)
+                                <?php
+                                    $request_user = \App\Models\User::find($request->user_id);
+                                    $request_pet = \App\Models\Pet::find($request->pet_id);
+                                ?>
                                 @if($request->confirmed === 0)
                                     <li class="dashboard__list-item">
-                                        <span>{{\App\Models\User::find($request->user_id)->name}} wil op {{\App\Models\Pet::find($request->pet_id)->name}} passen!</span>
+                                        <span>{{$request_user->name}} wil op {{$request_pet->name}} passen!</span>
                                         <form method="GET" action="/users/{{$request->user_id}}" target="_blank">
                                             @csrf
                                             <x-button class="dashboard__button">Bekijk profiel</x-button>
@@ -94,11 +98,11 @@
                                     </li>
                                 @elseif($request->finished === 0)
                                     <li class="dashboard__list-item">
-                                        <span style="width: 100%; text-align: center;">{{\App\Models\User::find($request->user_id)->name}} past vanaf {{\App\Models\Pet::find($request->pet_id)->available_date}} voor {{\App\Models\Pet::find($request->pet_id)->length_of_stay}} op {{\App\Models\Pet::find($request->pet_id)->name}}</span>
+                                        <span style="width: 100%; text-align: center;">{{$request_user->name}} past vanaf {{$request_pet->available_date}} voor {{$request_pet->length_of_stay}} op {{$request_pet->name}}</span>
                                     </li>
                                 @elseif($request->reviewed === 0)
                                     <li class="dashboard__list-item">
-                                        <span>Tevreden over {{\App\Models\User::find($request->user_id)->name}}?</span>
+                                        <span>Tevreden over {{$request_user->name}}?</span>
                                         <x-button class="dashboard__button">Laat een Review achter</x-button>
                                     </li>
                                 @endif
