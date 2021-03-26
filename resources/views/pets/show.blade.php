@@ -5,7 +5,7 @@
 @endsection
 
 @section('metaTitle')
-{{$pet->name}} de {{$pet->kind}} 
+{{$pet->name}} de {{$pet->kind}}
 @endsection
 
 @section('content')
@@ -30,7 +30,12 @@
             <div class="petProfile__btnSection">
                 Wil jij op {{$pet->name}} passen?
                 @auth
-                    <a href="#" class="petProfile__button">Bied je aan!</a>
+                    <form method="POST" action="/request/create">
+                        @csrf
+                        <input name="pet_id" type="hidden" value="{{$pet->id}}"/>
+                        <input name="user_id" type="hidden" value="{{Auth::id()}}"/>
+                        <x-button class="petProfile__button">Bied je aan!</x-button>
+                    </form>
                 @endauth
                 @guest
                     <a href="/login" class="petProfile__button">Log in om je aan te bieden!</a>

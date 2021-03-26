@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Pet;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +25,7 @@ class PetController extends Controller
     public function destroy($id){
         $pet = Pet::find($id);
         $pet->delete();
-        
+
         return redirect('/dashboard');
     }
 

@@ -21,6 +21,8 @@ Route::post('/pets/{id}/delete', [\App\Http\Controllers\PetController::class, 'd
 Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
 Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
 
+Route::post('/request/create', [\App\Http\Controllers\RequestController::class, 'store']);
+
 Route::get('/', function () {
     return view('home');
 });
