@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use DB;
 
 class ReviewSeeder extends Seeder
 {
@@ -13,6 +14,10 @@ class ReviewSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('reviews')->insert([
+            'reviewed_user' => 2,
+            'review_by' => 1,
+            'review' => "Ja was wel okee eigenlijk",
+        ]);
     }
 }

@@ -54,6 +54,14 @@ class User extends Authenticatable
         return $this->hasMany('\App\Models\Request', 'user_id', 'id');
     }
 
+    public function getReviewsOfUser(){
+        return $this->hasMany('\App\Models\Review', 'reviewed_user', 'id');
+    }
+
+    public function getReviewsByUser(){
+        return $this->hasMany('\App\Models\Review', 'review_by', 'id');
+    }
+
     public function sitsPets(){
         return $this->belongsToMany('\App\Models\KindOfPet', 'kind', 'sits');
     }
