@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('DIERENDIERENDIEREN'),
             'image' => 'img/users/arthur/arthur_1.jpg',
             'hometown' => 'Oude Wetering',
+            'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
         ]);
 
         DB::table('users')->insert([
@@ -32,6 +33,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('OMGGRATISGELDMINEN'),
             'image' => 'img/users/benny/benny_1.jpg',
             'hometown' => 'Breda',
+            'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
         ]);
 
         DB::table('users')->insert([
@@ -42,6 +44,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('GPUSZIJNOMCOINSTEMINEN'),
             'image' => 'img/users/eddy/eddy_1.jpg',
             'hometown' => 'Eindhoven',
+            'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
         ]);
 
         DB::table('users')->insert([
@@ -52,6 +55,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('LOLWATZEURENDIEGAMERSNOU'),
             'image' => 'img/users/linda/linda_1.jpg',
             'hometown' => 'Leiden',
+            'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
         ]);
         
         DB::table('users')->insert([
@@ -62,6 +66,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('IKWASNETTELAATMETBITCOIN'),
             'image' => 'img/users/theo/theo_1.jpg',
             'hometown' => 'Tilburg',
+            'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
         ]);
         
         DB::table('users')->insert([
@@ -72,6 +77,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('DOGECOINISDEHYPEGOZER'),
             'image' => 'img/users/priscilla/priscilla_1.jpg',
             'hometown' => 'Purmerend',
+            'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
         ]);
 
         DB::table('users')->insert([
@@ -82,6 +88,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('IKSNAPHIEREIGENLIJKNIKSVAN'),
             'image' => 'img/users/carlo/carlo_1.jpg',
             'hometown' => 'Culemborg',
+            'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
         ]);
 
         DB::table('users')->insert([
@@ -92,6 +99,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('HELPMEAUBVANDIEBEERAF:('),
             'image' => 'img/users/christopher/christopher_1.jpg',
             'hometown' => 'Londen',
+            'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
             'blocked' => 1,
         ]);
     }

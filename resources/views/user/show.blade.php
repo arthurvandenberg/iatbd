@@ -20,7 +20,7 @@
                 <p>{{$user->hometown}}</p>
             </div>
             <div class="userProfile__description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam laborum perspiciatis eveniet nostrum voluptas? Commodi veritatis expedita, quibusdam atque totam natus incidunt laudantium sapiente pariatur odit cum similique quod dolor.</p>
+                <p>{{$user->description}}</p>
             </div>
         </div>
     </div>

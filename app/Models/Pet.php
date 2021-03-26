@@ -22,9 +22,13 @@ class Pet extends Model
         'compensation_amount'
     ];
 
-    protected $table = "pets";
+    protected $table = 'pets';
 
     public function getOwner(){
-        return $this->belongsTo("\App\Models\User", "owner_id", "id");
+        return $this->belongsTo('\App\Models\User', 'owner_id', 'id');
+    }
+
+    public function getRequests(){
+        return $this->hasMany('\App\Models\Request', 'pet_id', 'id');
     }
 }

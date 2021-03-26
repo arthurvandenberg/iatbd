@@ -5,11 +5,16 @@
 @endsection
 
 @section('metaTitle', 'Dashboard')
-    
-<?php 
-    $user = Auth::user(); 
+
+<?php
+    $user = Auth::user();
     $kind_of_pets = \App\Models\KindOfPet::all();
-    $pets_of_user = \App\Models\User::find(Auth::id())->allPets;
+    $pets_of_user = \App\Models\User::find(Auth::id())->getPets;
+    $requested_pets = array();
+    foreach($pets_of_user as $pet){
+        array_push($requested_pets, \App\Models\Pet::find($pet->id)->getRequests);
+    }
+    array_splice($requested_pets, 0,1);
 ?>
 
 @section('content')
@@ -34,12 +39,12 @@
                             @endforeach
                         </select>
                     </div>
-                    
+
                     <div class="auth__field">
                         <x-label for="description" :value="__('Description')" />
                         <textarea id="description" name="description" class="auth__input" :value="old('description')" rows="5" required autofocus></textarea>
                     </div>
-                    
+
                     <div class="auth__field">
                         <x-label for="availableDate" :value="__('Available From: ')" />
                         <x-input id="availableDate"  type="date" name="availableDate" :value="old('availableDate')" required autofocus />
@@ -77,13 +82,30 @@
                 <div class="dashboard__row">
                     <h2 class="dashboard__column-title">{{ __('Your offers: ') }}</h2>
                     <ul class="dashboard__list">
-                        <li class="dashboard__list-item">
-                            <span>Benny wil op Henk passen!</span>
-                            <form method="GET" action="/users/2" target="_blank">
-                                @csrf
-                                <x-button class="dashboard__button">Bekijk profiel</x-button>
-                            </form>
-                        </li>
+                        @forelse($requested_pets as $pet_requests)
+                            @foreach($pet_requests as $request)
+                                @if($request->confirmed === 0)
+                                    <li class="dashboard__list-item">
+                                        <span>{{\App\Models\User::find($request->user_id)->name}} wil op {{\App\Models\Pet::find($request->pet_id)->name}} passen!</span>
+                                        <form method="GET" action="/users/{{$request->user_id}}" target="_blank">
+                                            @csrf
+                                            <x-button class="dashboard__button">Bekijk profiel</x-button>
+                                        </form>
+                                    </li>
+                                @elseif($request->finished === 0)
+                                    <li class="dashboard__list-item">
+                                        <span style="width: 100%; text-align: center;">{{\App\Models\User::find($request->user_id)->name}} past vanaf {{\App\Models\Pet::find($request->pet_id)->available_date}} voor {{\App\Models\Pet::find($request->pet_id)->length_of_stay}} op {{\App\Models\Pet::find($request->pet_id)->name}}</span>
+                                    </li>
+                                @elseif($request->reviewed === 0)
+                                    <li class="dashboard__list-item">
+                                        <span>Tevreden over {{\App\Models\User::find($request->user_id)->name}}?</span>
+                                        <x-button class="dashboard__button">Laat een Review achter</x-button>
+                                    </li>
+                                @endif
+                            @endforeach
+                            @empty
+                                <li>{{__('No requests')}}</li>
+                        @endforelse
                     </ul>
                 </div>
             </div>

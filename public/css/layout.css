@@ -44,12 +44,16 @@ a {
     text-align: center;
 }
 
-.register__button a {
+.register__button {
     color: #f3f3f3;
+    font-weight: 300;
 }
 
 .page__wrapper {
-    padding: 2rem 10rem 5rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    max-width: 60%;
+    margin: auto;
 }
 
 .header {

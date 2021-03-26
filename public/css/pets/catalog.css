@@ -1,9 +1,9 @@
 .petCatalog {
     margin: 2rem 0;
     display: grid;
-    grid-template-columns: repeat(4, 23.5%);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .petCard {

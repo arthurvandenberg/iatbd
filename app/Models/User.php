@@ -44,10 +44,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $table = "users";
+    protected $table = 'users';
 
-    public function allPets(){
+    public function getPets(){
         return $this->hasMany('\App\Models\Pet', 'owner_id', 'id');
+    }
+
+    public function getRequests(){
+        return $this->hasMany('\App\Models\Request', 'user_id', 'id');
     }
 
     public function sitsPets(){

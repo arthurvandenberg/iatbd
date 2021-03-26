@@ -28,7 +28,7 @@ class PetController extends Controller
         $pet = Pet::find($id);
         $pet->delete();
         
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/dashboard');
     }
 
     /**
@@ -60,6 +60,6 @@ class PetController extends Controller
 
         event(new Registered($pet));
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/dashboard');
     }
 }

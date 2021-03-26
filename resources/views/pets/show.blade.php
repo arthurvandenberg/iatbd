@@ -33,7 +33,7 @@
                     <a href="#" class="petProfile__button">Bied je aan!</a>
                 @endauth
                 @guest
-                    <a href="#" class="petProfile__button">Log in om je aan te bieden!</a>
+                    <a href="/login" class="petProfile__button">Log in om je aan te bieden!</a>
                 @endguest
             </div>
         </div>
