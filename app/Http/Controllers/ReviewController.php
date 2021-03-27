@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -20,5 +22,24 @@ class ReviewController extends Controller
         ]);
     }
 
-    public function store(Request $request){}
+    public function store(Request $request){
+
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'review' => 'required',
+            'reviewed_user' => 'required',
+            'author' => 'required',
+        ]);
+
+        $review = Review::create([
+            'title' => $request->title,
+            'review' => $request->review,
+            'reviewed_user' => $request->reviewed_user,
+            'author' => $request->author,
+        ]);
+
+        event(new Registered($review));
+
+        return redirect('/dashboard');
+    }
 }

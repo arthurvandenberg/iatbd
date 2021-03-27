@@ -22,7 +22,7 @@ Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
 Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
 Route::get('/users/{user_id}/reviews', [\App\Http\Controllers\ReviewController::class, 'index']);
 Route::get('/users/{user_id}/reviews/create/{pet_id}', [\App\Http\Controllers\ReviewController::class, 'create']);
-Route::post('/users/{user_id}/reviews/store', [\App\Http\Controllers\ReviewController::class, 'store']);
+Route::post('/users/reviews/store', [\App\Http\Controllers\ReviewController::class, 'store']);
 
 Route::post('/request/create', [\App\Http\Controllers\RequestController::class, 'store']);
 

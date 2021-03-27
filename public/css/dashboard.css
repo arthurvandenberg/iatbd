@@ -34,18 +34,21 @@
     background: #ebe6e6;
     border-radius: 0.8rem;
     margin-bottom: 1rem;
+    justify-content: space-between;
 }
 
 .dashboard__list-item span {
-    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
 }
 .dashboard__list-item form {
-    position: absolute;
-    right: 0;
     height: 100%;
 }
 
 .dashboard__button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    height: 100%;
+    margin: 0;
 }
