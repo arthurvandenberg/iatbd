@@ -18,10 +18,11 @@
     flex-direction: column;
 }
 
-.dashboard__pet-wrapper {
+.dashboard__row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
+    margin-bottom: 5rem;
 }
 
 .dashboard__list {
@@ -46,9 +47,46 @@
     height: 100%;
 }
 
+.dashboard__pending {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1.5rem;
+}
+
 .dashboard__button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     height: 100%;
     margin: 0;
+}
+
+.dashboard__button-container {
+    overflow:hidden;
+}
+.dashboard__button-container form {
+    flex: 1 1 50%;
+}
+
+.dashboard__button-accept {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    background: #9ede73;
+    margin: 0;
+}
+
+.dashboard__button-decline {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    background: #be0000;
+    margin: 0;
+}
+
+.dashboard__return-form {
+    width: 100%;
+}
+.dashboard__button-return {
+    width: 100%;
+    margin:0;
 }

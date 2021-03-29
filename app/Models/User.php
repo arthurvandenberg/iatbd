@@ -61,8 +61,4 @@ class User extends Authenticatable
     public function getReviewsByUser(){
         return $this->hasMany('\App\Models\Review', 'review_by', 'id');
     }
-
-    public function sitsPets(){
-        return $this->belongsToMany('\App\Models\KindOfPet', 'kind', 'sits');
-    }
 }

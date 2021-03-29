@@ -8,6 +8,13 @@
 {{$pet->name}} de {{$pet->kind}}
 @endsection
 
+<?php
+    $startOfStay = new DateTime($pet->available_date);
+    $endOfStay = new DateTime($pet->end_of_stay);
+    $interval = $startOfStay->diff($endOfStay);
+    $lengthOfStay = $interval->format('%a');
+?>
+
 @section('content')
     <a href="/pets">&larr; Terug naar het overzicht</a>
     <div class="petProfile">
@@ -23,8 +30,8 @@
                 <p>{{$pet->description}}</p>
             </div>
             <div class="petProfile__stayInfo">
-                <p>Beschikbaar vanaf: <span>{{$pet->available_date}}</span></p>
-                <p>Duur van verblijf: <span>{{$pet->length_of_stay}}</span></p>
+                <p>Beschikbaar vanaf: <span>{{date('d-m-Y', strtotime($pet->available_date))}}</span></p>
+                <p>Duur van verblijf: <span>{{$lengthOfStay}} Dagen</span></p>
                 <p>Vergoeding: <span>{{$pet->compensation_amount}}</span></p>
             </div>
             <div class="petProfile__btnSection">

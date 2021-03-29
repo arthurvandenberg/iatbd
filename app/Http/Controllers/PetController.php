@@ -6,6 +6,7 @@ use App\Models\Pet;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DateTime;
 
 class PetController extends Controller
 {
@@ -43,16 +44,15 @@ class PetController extends Controller
             'name' => 'required|string|max:255',
         ]);
 
-        $availableDateArray = explode('-', $request->availableDate);
-        $availableDate = $availableDateArray[2]."-".$availableDateArray[1]."-".$availableDateArray[0];
+
 
         $pet = Pet::create([
             'owner_id' => Auth::id(),
             'name' => $request->name,
             'kind' => $request->kind,
             'description' => $request->description,
-            'available_date' => $availableDate,
-            'length_of_stay' => $request->lengthOfStay,
+            'available_date' => $request->availableDate,
+            'end_of_stay' => $request->endOfStay,
             'compensation_amount' => $request->compensationAmount
         ]);
 

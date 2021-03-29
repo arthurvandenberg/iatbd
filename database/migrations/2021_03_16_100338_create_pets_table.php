@@ -22,8 +22,8 @@ class CreatePetsTable extends Migration
             $table->foreign('kind')->references('kind')->on('kind_of_pet');
             $table->string('description')->nullable();
             $table->boolean('available')->default(1);
-            $table->string('available_date')->nullable();
-            $table->string('length_of_stay')->nullable();
+            $table->date('available_date')->nullable();
+            $table->date('end_of_stay')->nullable();
             $table->string('compensation_amount')->nullable();
             $table->timestamps();
         });

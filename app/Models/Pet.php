@@ -18,7 +18,7 @@ class Pet extends Model
         'kind',
         'description',
         'available_date',
-        'length_of_stay',
+        'end_of_stay',
         'compensation_amount'
     ];
 
