@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PetSeeder::class,
             RequestSeeder::class,
             ReviewSeeder::class,
+            ListingSeeder::class,
         ]);
     }
 }

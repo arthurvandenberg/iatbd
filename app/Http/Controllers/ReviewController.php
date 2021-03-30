@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Review;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use DB;
 
 class ReviewController extends Controller
 {
@@ -22,7 +23,7 @@ class ReviewController extends Controller
         ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request, $request_id){
 
         $request->validate([
             'title' => 'required|string|max:255',
@@ -39,6 +40,9 @@ class ReviewController extends Controller
         ]);
 
         event(new Registered($review));
+
+        $sit_request = \App\Models\Request::where('id', $request_id);
+        $sit_request->update(['reviewed' => 1]);
 
         return redirect('/dashboard');
     }

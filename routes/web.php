@@ -21,13 +21,15 @@ Route::post('/pets/{id}/delete', [\App\Http\Controllers\PetController::class, 'd
 Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
 Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
 Route::get('/users/{user_id}/reviews', [\App\Http\Controllers\ReviewController::class, 'index']);
-Route::get('/users/{user_id}/reviews/create/{pet_id}', [\App\Http\Controllers\ReviewController::class, 'create']);
-Route::post('/users/reviews/store', [\App\Http\Controllers\ReviewController::class, 'store']);
+Route::post('/users/reviews/store/{request_id}', [\App\Http\Controllers\ReviewController::class, 'store']);
 
 Route::post('/request/create', [\App\Http\Controllers\RequestController::class, 'store']);
 Route::post('/request/{id}/{owner_id}/accept', [\App\Http\Controllers\RequestController::class, 'accept']);
 Route::post('/request/{id}/{owner_id}/delete', [\App\Http\Controllers\RequestController::class, 'delete']);
 Route::post('/request/{id}/{owner_id}/finish', [\App\Http\Controllers\RequestController::class, 'finish']);
+
+Route::get('/listing/create/{pet_id}', [\App\Http\Controllers\ListingController::class, 'create']);
+Route::post('/listing/store', [\App\Http\Controllers\ListingController::class, 'store']);
 
 Route::get('/', function () {
     return view('home');

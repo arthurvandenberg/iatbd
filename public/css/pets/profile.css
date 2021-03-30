@@ -2,7 +2,7 @@
     margin-top: 5rem;
     width: 100%;
     display: grid;
-    grid-template-columns: 65% 30%;
+    grid-template-columns: 60% 35%;
     grid-template-rows: 1fr;
     gap: 5%;
 }
@@ -29,21 +29,37 @@
     justify-content: space-between;
 }
 
-.petProfile__btnSection {
+.petProfile__listings-title {
+    font-weight: 400;
+}
+
+.petProfile__listings-list {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.petProfile__listings-list-item {
     display: flex;
-    flex-direction: column;
+    position: relative;
+    background: #ebe6e6;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+}
+
+.petProfile__listings-list-item span {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0 1rem 1.5rem;
+    max-width: 75%;
+}
+.petProfile__listing-list-item form {
+    height: 100%;
 }
 
 .petProfile__button {
-    appearance: button;
-    font-size: initial;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    margin-top: 1rem;
-    width: fit-content;
-    box-sizing: border-box;
-    border: 2px solid #ff896b;
-    border-radius: 5px;
-    background: #ff896b;
-    color: #f3f3f3;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 100%;
+    margin: 0;
 }

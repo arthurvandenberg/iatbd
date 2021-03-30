@@ -31,4 +31,8 @@ class Pet extends Model
     public function getRequests(){
         return $this->hasMany('\App\Models\Request', 'pet_id', 'id');
     }
+
+    public function getListings(){
+        return $this->hasMany('\App\Models\Listing', 'pet_id', 'id');
+    }
 }

@@ -2,6 +2,17 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
+<script>
+    const toggleActive = (event) => {
+        if(!document.querySelector('#dashboard__review-section').classList.contains('active')){
+            document.querySelector('#dashboard__review-section').classList.add('active');
+            console.log('show')
+        } else {
+            document.querySelector('#dashboard__review-section').classList.remove('active');
+            console.log('hide')
+        }
+    }
+</script>
 @endsection
 
 @section('metaTitle', 'Dashboard')
@@ -73,10 +84,16 @@
                             @foreach($pets_of_user as $pet)
                                 <li class="dashboard__list-item">
                                     <span>{{$pet->name}}</span>
-                                    <form method="POST" action="/pets/{{$pet->id}}/delete">
-                                        @csrf
-                                        <x-button onClick="return confirm('{{__('Are you sure?')}}')" class="dashboard__button">{{__('Delete')}}</x-button>
-                                    </form>
+                                    <div class="dashboard__form-section">
+                                        <form method="GET" action="/listing/create/{{$pet->id}}">
+                                            @csrf
+                                            <x-button class="dashboard__button-left">{{__('Create Listing')}}</x-button>
+                                        </form>
+                                        <form method="POST" action="/pets/{{$pet->id}}/delete">
+                                            @csrf
+                                            <x-button onClick="return confirm('{{__('Are you sure?')}}')" class="dashboard__button">{{__('Delete')}}</x-button>
+                                        </form>
+                                    </div>
                                 </li>
                             @endforeach
                         </ul>
@@ -120,16 +137,27 @@
                                             <li class="dashboard__list-item">
                                                 <form method="POST" action="/request/{{$request->id}}/{{$request_pet->owner_id}}/finish" class="dashboard__return-form">
                                                     @csrf
-                                                    <x-button class="dashboard__button-return">{{__('Confirm the return of '.$request_pet->name)}}</x-button>
+                                                    <x-button class="dashboard__button-return">{{__('Confirm the return of ').$request_pet->name}}</x-button>
                                                 </form>
                                             </li>
                                         @endif
                                         @elseif($request->reviewed === 0)
                                             <li class="dashboard__list-item">
                                                 <span>Heeft {{$request_pet->name}} het leuk gehad bij {{$request_user->name}}?</span>
-                                                <form method="GET" action="/users/{{$request->user_id}}/reviews/create/{{$request_pet->id}}">
+                                                <a class="auth__button dashboard__button" onClick="toggleActive(this);">Laat een Review achter</a>
+                                            </li>
+                                            <li class="dashboard__list-item dashboard__pending" id="dashboard__review-section">
+                                                <form method="POST" action="/users/reviews/store/{{$request->id}}" class="dashboard__review-form">
                                                     @csrf
-                                                    <x-button class="dashboard__button">Laat een Review achter</x-button>
+                                                    <x-label for="title" :value="__('Title')" />
+                                                    <x-input id="title" type="text" name="title" :value="old('title')" required autofocus />
+
+                                                    <x-label for="review" :value="__('Your Review: ')" />
+                                                    <textarea id="review"  type="date" name="review" class="auth__input" :value="old('review')" rows="5" required autofocus></textarea>
+
+                                                    <x-input id="reviewed_user"  type="hidden" name="reviewed_user" value="{{$request_user->id}}" required autofocus />
+                                                    <x-input id="author"  type="hidden" name="author" value="{{Auth::id()}}" required autofocus />
+                                                    <x-button class="dashboard__review-button">{{__('Send')}}</x-button>
                                                 </form>
                                             </li>
                                         @else
@@ -137,7 +165,7 @@
                                         @endif
                                 @endforeach
                             @empty
-                                <li>{{__('No pets')}}</li>
+                                <li>{{__('No pet')}}</li>
                             @endforelse
                         </ul>
                     </div>
@@ -152,23 +180,23 @@
                         ?>
                         @if($my_request->confirmed === 0)
                             <li class="dashboard__list-item">
-                                <span>{{$my_request_pet->name}}</span>
+                                <span>{{__('You have offered to sit ').$my_request_pet->name}}</span>
                                 <form method="POST" action="/request/{{$my_request->id}}/{{Auth::id()}}/delete">
                                     @csrf
                                     <x-button class="dashboard__button">
-                                        {{__('Cancel')}}
+                                        {{__('Cancel Offer')}}
                                     </x-button>
                                 </form>
                             </li>
                         @elseif($my_request->finished === 0)
                             <li class="dashboard__list-item">
-                                <span>{{$my_request_pet->name}}</span>
+                                <span class="dashboard__pending">{{__('You will be sitting ').$my_request_pet->name.__(' from ').date('d-m-Y', strtotime($my_request_pet->available_date)).__(' until ').date('d-m-Y', strtotime($my_request_pet->end_of_stay)).__('... Exciting!')}}</span>
                             </li>
                         @else
                             @continue
                         @endif
                     @empty
-                        {{__('You haven\'t made any offers yet.')}}
+                        <li class="dashboard__list-item dashboard__pending">{{__('You haven\'t made any offers yet.')}}</li>
                     @endforelse
                 </ul>
             </div>

@@ -22,9 +22,13 @@
             <div class="userProfile__description">
                 <p>{{$user->description}}</p>
             </div>
+            <div class="userProfile__reviews">
+                <h2 class="userProfile__reviews-title">{{__('Want to know what others think about ').$user->name.'?'}}</h2>
+                <a href="{{url('users/'.$user->id.'/reviews')}}" class="auth__button">{{__('Check out the Reviews!')}}</a>
+            </div>
         </div>
     </div>
     <div class="userGallery">
-        
+
     </div>
 @endsection

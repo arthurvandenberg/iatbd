@@ -44,10 +44,6 @@
     justify-content: space-between;
 }
 
-.petCard__btnSection {
-    padding: 1rem 2rem 2rem;
-}
-
 .petCard__button {
     appearance: button;
     font-size: initial;

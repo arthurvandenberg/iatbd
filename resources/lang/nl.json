@@ -21,8 +21,15 @@
     "Available From: ": "Beschikbaar vanaf: ",
     "Length of Stay": "Lengte van verblijf: ",
     "Compensation Amount": "Vergoeding: ",
-    "Your Pets: ": "Jouw Huisdieren: ", 
-    "Delete": "Schrijf uit", 
+    "Your Pets: ": "Jouw Huisdieren: ",
+    "Delete": "Schrijf uit",
     "Are you sure?": "Weet je het zeker?",
-    "Your offers: ": "Oppasverzoeken: "
+    "Your offers: ": "Oppasverzoeken: ",
+    "Offers you've made: ": "Verzoeken die jij hebt gedaan: ",
+    "You have offered to sit ": "Je hebt aangeboden om te passen op ",
+    "Cancel Offer": "Annuleer dit Verzoek",
+    "Confirm": "Accepteren",
+    "Decline": "Afwijzen",
+    "Confirm the return of ": "Bevestig de terugkomst van ",
+    "You haven't made any offers yet.": "Je hebt nog geen verzoeken gedaan"
 }

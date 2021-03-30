@@ -11,15 +11,16 @@ use DateTime;
 class PetController extends Controller
 {
     public function index() {
-        return view('pets.index', [
+        return view('pet.index', [
             'pets' => \App\Models\Pet::all(),
         ]);
     }
 
     public function show($id) {
-        return view('pets.show', [
+        return view('pet.show', [
             'pet' => \App\Models\Pet::find($id),
             'owner' => \App\Models\Pet::find($id)->getOwner,
+            'listings' => \App\Models\Pet::find($id)->getListings,
         ]);
     }
 
@@ -51,9 +52,6 @@ class PetController extends Controller
             'name' => $request->name,
             'kind' => $request->kind,
             'description' => $request->description,
-            'available_date' => $request->availableDate,
-            'end_of_stay' => $request->endOfStay,
-            'compensation_amount' => $request->compensationAmount
         ]);
 
         event(new Registered($pet));

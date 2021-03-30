@@ -1,0 +1,34 @@
+.listingCard {
+    padding: 25%;
+}
+
+.listingCard__title {
+    text-align: center;
+}
+
+.listingCard__title h2 {
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.listingCard form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.listingCard__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.listingCard__dates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.listingCard__date-field {
+    display: flex;
+    flex-direction: column;
+}
