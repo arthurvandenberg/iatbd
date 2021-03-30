@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             KindOfPetSeeder::class,
             PetSeeder::class,
+            ListingSeeder::class,
             RequestSeeder::class,
             ReviewSeeder::class,
-            ListingSeeder::class,
         ]);
     }
 }
