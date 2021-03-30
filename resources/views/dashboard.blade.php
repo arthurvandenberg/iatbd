@@ -94,6 +94,7 @@
                                     <?php
                                         $request_user = \App\Models\User::find($request->user_id);
                                         $request_pet = \App\Models\Pet::find($request->pet_id);
+                                        $request_listing = $request->getListing;
                                     ?>
                                     @if($request->confirmed === 0)
                                         <li class="dashboard__list-item">
@@ -119,7 +120,7 @@
                                         </li>
                                         @elseif($request->finished === 0)
                                             <li class="dashboard__list-item">
-                                                <span class="dashboard__pending">{{$request_user->name}} past van {{date('d-m-Y', strtotime($request_pet->available_date))}} tot {{date('d-m-Y', strtotime($request_pet->end_of_stay))}} op {{$request_pet->name}}</span>
+                                                <span class="dashboard__pending">{{$request_user->name}} past van {{date('d-m-Y', strtotime($request_listing->available_date))}} tot {{date('d-m-Y', strtotime($request_listing->end_of_stay))}} op {{$request_pet->name}}</span>
                                             </li>
                                         @if(\Carbon\Carbon::now() >= $request_pet->end_of_stay)
                                             <li class="dashboard__list-item">

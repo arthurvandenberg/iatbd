@@ -33,7 +33,7 @@
                         $lengthOfStay = $interval->format('%a');
                         ?>
                         <li class="petProfile__listings-list-item">
-                            <span>Vanaf: {{date('d-m-Y', strtotime($listing->available_date))}} voor {{$lengthOfStay}} @if($lengthOfStay > 1) dagen @else dag @endif Vergoeding: {{$listing->compensation_amount}}</span>
+                            <span><p>Vanaf: {{date('d-m-Y', strtotime($listing->available_date))}} voor {{$lengthOfStay}} @if($lengthOfStay > 1) dagen @else dag @endif Vergoeding: {{$listing->compensation_amount}}</p></span>
                             @if($listing->available === 1)
                             @auth
                                 <form method="POST" action="/request/create">
