@@ -12,8 +12,4 @@ class KindOfPet extends Model
     public function allPets(){
         return $this->hasMany('\App\Models\Pet', 'kind', 'kind');
     }
-
-    public function whoSits(){
-        return $this->belongsToMany('\App\Models\User', 'sits', 'kind');
-    }
 }

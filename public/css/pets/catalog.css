@@ -6,6 +6,16 @@
     gap: 4rem;
 }
 
+.petCatalog__sidebar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.petCatalog__sidebar select {
+    margin-left: 1rem;
+}
+
 .petCard {
     display: flex;
     flex-direction: column;
@@ -13,6 +23,10 @@
     background-color: #ebe6e6;
     border-radius: 8px;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.petCard.hidden {
+    display: none;
 }
 
 .petCard__image {
