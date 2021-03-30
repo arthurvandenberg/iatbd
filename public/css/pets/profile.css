@@ -50,7 +50,7 @@
 .petProfile__listings-list-item span {
     display: flex;
     align-items: center;
-    padding: 1rem 0 1rem 1.5rem;
+    padding-left: 1.5rem;
     max-width: 75%;
 }
 .petProfile__listing-list-item form {
@@ -58,8 +58,17 @@
 }
 
 .petProfile__button {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    font-size: initial;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    border: 1px solid #ff896b;
+    background: #ff896b;
+    text-align: center;
+    color: #f3f3f3;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     height: 100%;
     margin: 0;
 }

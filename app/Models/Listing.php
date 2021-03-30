@@ -18,4 +18,8 @@ class Listing extends Model
     public function getPet(){
         return $this->belongsTo('\App\Models\Pet', 'pet_id', 'id');
     }
+
+    public function getRequests(){
+        return $this->hasMany('\App\Models\Request', 'listing_id', 'id');
+    }
 }

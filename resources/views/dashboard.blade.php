@@ -36,13 +36,13 @@
             <div class="dashboard__row">
                 <div class="dashboard__column">
                 <h2 class="dashboard__column-title">{{ __('Sign your pet up: ') }}</h2>
-                    <form method="POST" action="/pets/create">
+                    <form method="POST" action="/pets/create" class="dashboard__pet-form" enctype="multipart/form-data">
                         @csrf
-                        <div class="auth__field">
+                        <div class="auth__field name">
                             <x-label for="name" :value="__('Your pet\'s name: ')" />
                             <x-input id="name"  type="text" name="name" :value="old('name')" required autofocus />
                         </div>
-                        <div class="auth__field">
+                        <div class="auth__field kind">
                             <x-label for="kind" :value="__('Kind')" />
                             <select id="kind" name="kind" class="auth__input" required autofocus>
                                 @foreach($kind_of_pets as $kind)
@@ -52,27 +52,15 @@
                                 @endforeach
                             </select>
                         </div>
-
-                        <div class="auth__field">
+                        <div class="auth__field image">
+                            <x-label for="image" :value="__('Upload een foto van je huisdier: ')"/>
+                            <x-input id="image" type="file" name="image" required/>
+                        </div>
+                        <div class="auth__field description">
                             <x-label for="description" :value="__('Description')" />
                             <textarea id="description" name="description" class="auth__input" :value="old('description')" rows="5" required autofocus></textarea>
                         </div>
-
-                        <div class="auth__field">
-                            <x-label for="availableDate" :value="__('Available From: ')" />
-                            <x-input id="availableDate"  type="date" name="availableDate" :value="old('availableDate')" required autofocus />
-                        </div>
-
-                        <div class="auth__field">
-                            <x-label for="endOfStay" :value="__('End of Stay')" />
-                            <x-input id="endOfStay"  type="date" name="endOfStay" :value="old('endOfStay')" required autofocus />
-                        </div>
-
-                        <div class="auth__field">
-                            <x-label for="compensationAmount" :value="__('Compensation Amount')" />
-                            <x-input id="compensationAmount"  type="text" name="compensationAmount" :value="old('compensationAmount')" required autofocus />
-                        </div>
-                        <x-button>
+                        <x-button class="dashboard__button-pet-form">
                             {{ __('Register') }}
                         </x-button>
                     </form>
@@ -83,7 +71,7 @@
                         <ul class="dashboard__list">
                             @foreach($pets_of_user as $pet)
                                 <li class="dashboard__list-item">
-                                    <span>{{$pet->name}}</span>
+                                    <span><a href="/pets/{{$pet->id}}">{{$pet->name}}</a></span>
                                     <div class="dashboard__form-section">
                                         <form method="GET" action="/listing/create/{{$pet->id}}">
                                             @csrf
@@ -171,34 +159,36 @@
                     </div>
                 </div>
             </div>
-            <div class="dashoard__row">
-                <h2 class="dashboard__column-title">{{__('Offers you\'ve made: ')}}</h2>
-                <ul class="dashboard__list">
-                    @forelse($requests_of_user as $my_request)
-                        <?php
-                            $my_request_pet = \App\Models\Pet::find($my_request->pet_id);
-                        ?>
-                        @if($my_request->confirmed === 0)
-                            <li class="dashboard__list-item">
-                                <span>{{__('You have offered to sit ').$my_request_pet->name}}</span>
-                                <form method="POST" action="/request/{{$my_request->id}}/{{Auth::id()}}/delete">
-                                    @csrf
-                                    <x-button class="dashboard__button">
-                                        {{__('Cancel Offer')}}
-                                    </x-button>
-                                </form>
-                            </li>
-                        @elseif($my_request->finished === 0)
-                            <li class="dashboard__list-item">
-                                <span class="dashboard__pending">{{__('You will be sitting ').$my_request_pet->name.__(' from ').date('d-m-Y', strtotime($my_request_pet->available_date)).__(' until ').date('d-m-Y', strtotime($my_request_pet->end_of_stay)).__('... Exciting!')}}</span>
-                            </li>
-                        @else
-                            @continue
-                        @endif
-                    @empty
-                        <li class="dashboard__list-item dashboard__pending">{{__('You haven\'t made any offers yet.')}}</li>
-                    @endforelse
-                </ul>
+            <div class="dashboard__row">
+                <div class="dashboard__column">
+                    <h2 class="dashboard__column-title">{{__('Offers you\'ve made: ')}}</h2>
+                    <ul class="dashboard__list">
+                        @forelse($requests_of_user as $my_request)
+                            <?php
+                                $my_request_pet = \App\Models\Pet::find($my_request->pet_id);
+                            ?>
+                            @if($my_request->confirmed === 0)
+                                <li class="dashboard__list-item">
+                                    <span>{{__('You have offered to sit ').$my_request_pet->name}}</span>
+                                    <form method="POST" action="/request/{{$my_request->id}}/{{Auth::id()}}/delete">
+                                        @csrf
+                                        <x-button class="dashboard__button">
+                                            {{__('Cancel Offer')}}
+                                        </x-button>
+                                    </form>
+                                </li>
+                            @elseif($my_request->finished === 0)
+                                <li class="dashboard__list-item">
+                                    <span class="dashboard__pending">{{__('You will be sitting ').$my_request_pet->name.__(' from ').date('d-m-Y', strtotime($my_request_pet->available_date)).__(' until ').date('d-m-Y', strtotime($my_request_pet->end_of_stay)).__('... Exciting!')}}</span>
+                                </li>
+                            @else
+                                @continue
+                            @endif
+                        @empty
+                            <li class="dashboard__list-item dashboard__pending">{{__('You haven\'t made any offers yet.')}}</li>
+                        @endforelse
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

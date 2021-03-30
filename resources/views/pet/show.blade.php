@@ -43,7 +43,7 @@
                                 </form>
                             @endauth
                             @guest
-                                <x-button href="/login" class="petProfile__button">Log in om je aan te bieden!</x-button>
+                                <a href="/login" class="petProfile__button">Log in om je aan te bieden!</a>
                             @endguest
                         </li>
                     @empty

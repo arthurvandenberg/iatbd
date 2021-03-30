@@ -17,6 +17,7 @@ class CreateRequestsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('pet_id')->constrained('pets');
+            $table->foreignId('listing_id')->constrained('listings');
             $table->boolean('confirmed')->default(0);
             $table->boolean('finished')->default(0);
             $table->boolean('reviewed')->default(0);

@@ -269,3 +269,21 @@ a {
 .auth__register-link {
     font-size: 1.5rem;
 }
+
+@media only screen and (max-width: 1024px) {
+    .page__wrapper {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .page__wrapper {
+        max-width: 95%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .page__wrapper {
+
+    }
+}

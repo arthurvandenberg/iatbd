@@ -16,6 +16,7 @@ class Pet extends Model
         'owner_id',
         'name',
         'kind',
+        'image',
         'description',
         'available_date',
         'end_of_stay',

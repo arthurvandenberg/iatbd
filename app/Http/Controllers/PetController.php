@@ -6,7 +6,6 @@ use App\Models\Pet;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use DateTime;
 
 class PetController extends Controller
 {
@@ -43,14 +42,19 @@ class PetController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
         ]);
 
+        $imageName = time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('img/pets'), $imageName);
 
 
         $pet = Pet::create([
             'owner_id' => Auth::id(),
             'name' => $request->name,
             'kind' => $request->kind,
+            'image' => asset('img/pets/'.$imageName),
             'description' => $request->description,
         ]);
 

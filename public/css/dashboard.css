@@ -51,6 +51,43 @@
     padding: 1rem 1.5rem;
 }
 
+.dashboard__button-pet-form {
+    width: 100%;
+    grid-area: register;
+}
+
+.auth__field {
+    justify-content: space-between;
+}
+
+.auth__field.name {
+    grid-area: name;
+}
+
+.auth__field.kind {
+    grid-area: kind;
+}
+
+.auth__field.image {
+    grid-area: image;
+}
+
+.auth__field.description {
+    grid-area: description;
+}
+
+.dashboard__pet-form{
+    display:grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas:
+        "name kind"
+        "image image"
+        "description description"
+        "register register";
+}
+
+
 .dashboard__button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -123,4 +160,10 @@
     transform: translateY(0);
     height: 100%;
     opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .dashboard__row {
+        grid-template-columns: 1fr;
+    }
 }
