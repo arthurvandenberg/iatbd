@@ -96,9 +96,8 @@
 }
 
 .dashboard__button-left {
-    background: #f3f3f3;
-    color: black;
-    border-color: #ebe6e6;
+    background: gray;
+    border-color: gray;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     margin: 0;

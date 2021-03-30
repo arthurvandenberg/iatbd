@@ -19,6 +19,7 @@ class RequestController extends Controller
         $pet_request = \App\Models\Request::create([
             'pet_id' => $request->pet_id,
             'user_id' => Auth::id(),
+            'listing_id' => $request->listing_id
         ]);
 
         event(new Registered($pet_request));
@@ -27,15 +28,17 @@ class RequestController extends Controller
     }
 
     public function accept($id, $owner_id){
-        $request = \App\Models\Request::where('id', $id);
+        $request = \App\Models\Request::find($id);
+        $listing = \App\Models\Request::find($id)->getListing;
         if($owner_id == Auth::id()){
             $request->update(['confirmed' => 1]);
+            $listing->update(['available' => 0]);
         }
         return redirect('/dashboard');
     }
 
     public function finish($id, $owner_id){
-        $request = \App\Models\Request::where('id', $id);
+        $request = \App\Models\Request::find($id);
         if($owner_id == Auth::id()){
             $request->update(['finished' => 1]);
         }
@@ -43,7 +46,7 @@ class RequestController extends Controller
     }
 
     public function delete($id, $owner_id){
-        $request = \App\Models\Request::where('id', $id);
+        $request = \App\Models\Request::find($id);
         if($owner_id == Auth::id()){
             $request->delete();
         }

@@ -9,6 +9,7 @@ class Request extends Model
     protected $fillable = [
         'user_id',
         'pet_id',
+        'listing_id',
         'confirmed',
         'finished',
         'reviewed'
@@ -22,5 +23,9 @@ class Request extends Model
 
     public function getPet(){
         return $this->belongsTo('\App\Models\Pet', 'pet_id', 'id');
+    }
+
+    public function getListing(){
+        return $this->belongsTo('App\Models\Listing', 'listing_id', 'id');
     }
 }

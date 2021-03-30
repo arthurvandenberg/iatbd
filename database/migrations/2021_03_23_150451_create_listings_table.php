@@ -20,6 +20,7 @@ class CreateListingsTable extends Migration
             $table->date('available_date')->nullable();
             $table->date('end_of_stay')->nullable();
             $table->string('compensation_amount')->nullable();
+            $table->boolean('closed')->default(false);
             $table->timestamps();
         });
     }

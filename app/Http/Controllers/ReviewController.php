@@ -41,8 +41,11 @@ class ReviewController extends Controller
 
         event(new Registered($review));
 
-        $sit_request = \App\Models\Request::where('id', $request_id);
+        $sit_request = \App\Models\Request::find($request_id);
+        $listing = \App\Models\Request::find($request_id)->getListing;
         $sit_request->update(['reviewed' => 1]);
+        $sit_request->delete();
+        $listing->delete();
 
         return redirect('/dashboard');
     }

@@ -34,17 +34,22 @@
                         ?>
                         <li class="petProfile__listings-list-item">
                             <span>Vanaf: {{date('d-m-Y', strtotime($listing->available_date))}} voor {{$lengthOfStay}} @if($lengthOfStay > 1) dagen @else dag @endif Vergoeding: {{$listing->compensation_amount}}</span>
+                            @if($listing->available === 1)
                             @auth
                                 <form method="POST" action="/request/create">
                                     @csrf
                                     <input name="pet_id" type="hidden" value="{{$pet->id}}"/>
                                     <input name="user_id" type="hidden" value="{{Auth::id()}}"/>
+                                    <input name="listing_id" type="hidden" value="{{$listing->id}}"/>
                                     <x-button class="petProfile__button">Bied je aan!</x-button>
                                 </form>
                             @endauth
                             @guest
                                 <a href="/login" class="petProfile__button">Log in om je aan te bieden!</a>
                             @endguest
+                            @else
+                                <x-button type="disabled" class="petProfile__button disabled">Niet meer beschikbaar</x-button>
+                            @endif
                         </li>
                     @empty
                         <h3>{{$pet->name}} heeft op het moment geen oppas nodig.</h3>

@@ -72,3 +72,8 @@
     height: 100%;
     margin: 0;
 }
+
+.petProfile__button.disabled {
+    background: gray;
+    border-color: gray;
+}
