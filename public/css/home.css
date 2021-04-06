@@ -1,17 +1,19 @@
-.home__heroImage {
-    width:100%;
-}
-
 .home__wrapper {
     position: absolute;
-    bottom: 25rem;
-    left: 10rem;
+    bottom: 25%;
+    left: 10%;
     color: #f3f3f3;
+}
+
+.page__main {
+    overflow: hidden;
+    background-image: url("../img/hero_2.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .page__wrapper {
     padding: 0;
-
 }
 
 .home__button {
@@ -27,4 +29,10 @@
     background: #ff896b;
     color: #f3f3f3;
     text-align: center;
+}
+
+@media only screen and (max-width: 375px) {
+    .home__wrapper {
+        left: 1%;
+    }
 }
