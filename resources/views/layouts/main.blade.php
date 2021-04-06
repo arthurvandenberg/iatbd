@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="footer__copyright">
-                <p>© Copyright 2021 | Barklaats</p>
+                <p>© Copyright 2021 | Barkplaats</p>
             </div>
         </footer>
     </body>
