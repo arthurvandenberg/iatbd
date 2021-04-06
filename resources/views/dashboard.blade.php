@@ -171,7 +171,7 @@
                             @if($my_request->confirmed === 0)
                                 <li class="dashboard__list-item">
                                     <span>{{__('You have offered to sit ').$my_request_pet->name}}</span>
-                                    <form method="POST" action="/request/{{$my_request->id}}/{{Auth::id()}}/delete">
+                                    <form method="POST" action="/request/{{$my_request->id}}/delete">
                                         @csrf
                                         <x-button class="dashboard__button">
                                             {{__('Cancel Offer')}}
