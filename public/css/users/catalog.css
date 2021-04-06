@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 .userCard {
@@ -34,6 +34,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .userCard__userInfo h2 {
@@ -69,4 +70,16 @@
 
 .userCard__button:hover{
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px){
+    .userCatalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .userCatalog {
+        grid-template-columns: 1fr;
+    }
 }

@@ -70,6 +70,7 @@ a {
     align-items: center;
     background-color: #ebe6e6;
     padding: 1rem 2rem;
+    z-index: 2;
 }
 
 .header__title-link {
@@ -294,14 +295,15 @@ a {
 
     .header__navigation-mobile {
         display: block;
-        opacity: 0;
         position: absolute;
         width: 100%;
-        transition: opacity 0.2s ease-out;
+        z-index: 1;
+        transform: translateY(-300px);
+        transition: all 0.5s ease-out;
     }
 
     .header__navigation-mobile.open {
-        opacity: 1;
+        transform: translateY(0);
     }
 
     .header__list-mobile {

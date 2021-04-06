@@ -81,3 +81,10 @@
     background: gray;
     border-color: gray;
 }
+
+@media screen and (max-width: 768px){
+    .petProfile {
+        grid-template-columns: 1fr;
+    }
+}
+

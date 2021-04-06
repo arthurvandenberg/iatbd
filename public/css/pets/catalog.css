@@ -49,6 +49,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
 }
 
 .petCard__petInfo h2 {
@@ -75,4 +76,20 @@
 
 .petCard__button:hover{
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px){
+    .petCatalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .petCatalog {
+        grid-template-columns: 1fr;
+    }
+
+    .petCatalog__sidebar {
+        justify-content: space-between;
+    }
 }
