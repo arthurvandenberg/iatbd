@@ -6,6 +6,11 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/users/profile.css')}}">
+<script>
+    const hoverImage = (event) => {
+        document.querySelector('.userProfile__image').src = event.src;
+    }
+</script>
 @endsection
 
 @section('content')
@@ -29,6 +34,9 @@
         </div>
     </div>
     <div class="userGallery">
-
+        <img onmouseenter="hoverImage(this)" class="userGallery__image" src="{{asset($user->image)}}" alt="Afbeelding van {{$user->name}}"/>
+        @foreach($homeImages as $homeImage)
+            <img onmouseenter="hoverImage(this)" class="userGallery__image" src="{{asset($homeImage->image)}}" alt="Afbeelding van het huis van {{$user->name}}"/>
+        @endforeach
     </div>
 @endsection

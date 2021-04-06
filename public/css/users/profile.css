@@ -1,3 +1,12 @@
+main {
+    height: 100%;
+}
+.page__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .userProfile {
     margin-top: 5rem;
     width: 100%;
@@ -17,7 +26,7 @@
 }
 
 .userProfile__info > div {
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 .userProfile__image {
@@ -46,4 +55,25 @@
     border-radius: 5px;
     background: #ff896b;
     color: #f3f3f3;
+}
+
+.userProfile__reviews{
+    display: flex;
+    flex-direction: column;
+}
+
+.userProfile__reviews-title{
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.userGallery {
+    margin-top: 1rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.userGallery__image {
+    width: 100%;
 }
