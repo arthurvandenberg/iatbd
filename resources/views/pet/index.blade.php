@@ -33,8 +33,8 @@
     <h1 class="page__title">Dierenoverzicht</h1>
     <div class="petCatalog__wrapper">
         <div class="petCatalog__sidebar">
-            <p>Filter op: </p>
-            <select onChange="filterAnimals(this)">
+            <label for="petFilter">Filter op: </label>
+            <select id="petFilter" onChange="filterAnimals(this)" class="auth__input">
                 <option>Alle diersoorten</option>
                 @foreach($kinds_of_pet as $kind_of_pet)
                     <option>{{$kind_of_pet->kind}}</option>

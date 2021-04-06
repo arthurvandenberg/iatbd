@@ -26,6 +26,10 @@ body {
     justify-content: space-between;
 }
 
+.page__main {
+    flex-grow: 1;
+}
+
 h1 {
     font-weight: 400;
 }

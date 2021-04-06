@@ -9,11 +9,12 @@
 .petCatalog__sidebar {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .petCatalog__sidebar select {
     margin-left: 1rem;
+    font-size: 1.5rem;
 }
 
 .petCard {

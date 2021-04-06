@@ -202,7 +202,7 @@
                 </div>
             </div>
             <div class="dashboard__home-wrapper">
-                <h2 class="dashboard__column-title">{{__('Images of your home')}}: </h2>
+                <h2 class="dashboard__column-title">{{__('Images of your home: ')}}</h2>
                 <div class="dashboard__home-images">
                     @forelse($homeImages as $image)
                         <div>
