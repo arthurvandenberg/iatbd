@@ -15,21 +15,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/pets', [\App\Http\Controllers\PetController::class, 'index']);
 Route::get('/pets/{id}', [\App\Http\Controllers\PetController::class, 'show']);
-Route::post('/pets/create', [\App\Http\Controllers\PetController::class, 'store']);
-Route::post('/pets/{id}/delete', [\App\Http\Controllers\PetController::class, 'destroy']);
 
 Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
 Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
 Route::get('/users/{user_id}/reviews', [\App\Http\Controllers\ReviewController::class, 'index']);
-Route::post('/users/reviews/store/{request_id}', [\App\Http\Controllers\ReviewController::class, 'store']);
 
-Route::post('/request/create', [\App\Http\Controllers\RequestController::class, 'store']);
-Route::post('/request/{id}/{owner_id}/accept', [\App\Http\Controllers\RequestController::class, 'accept']);
-Route::post('/request/{id}/{owner_id}/delete', [\App\Http\Controllers\RequestController::class, 'delete']);
-Route::post('/request/{id}/{owner_id}/finish', [\App\Http\Controllers\RequestController::class, 'finish']);
+Route::middleware(['auth'])->group(function(){
+    Route::post('/pets/create', [\App\Http\Controllers\PetController::class, 'store']);
+    Route::post('/pets/{id}/delete', [\App\Http\Controllers\PetController::class, 'destroy']);
 
-Route::get('/listing/create/{pet_id}', [\App\Http\Controllers\ListingController::class, 'create']);
-Route::post('/listing/store', [\App\Http\Controllers\ListingController::class, 'store']);
+    Route::post('/users/reviews/store/{request_id}', [\App\Http\Controllers\ReviewController::class, 'store']);
+
+    Route::post('/request/create', [\App\Http\Controllers\RequestController::class, 'store']);
+    Route::post('/request/{id}/accept', [\App\Http\Controllers\RequestController::class, 'accept']);
+    Route::post('/request/{id}/delete', [\App\Http\Controllers\RequestController::class, 'delete']);
+    Route::post('/request/{id}/finish', [\App\Http\Controllers\RequestController::class, 'finish']);
+
+    Route::get('/listing/create/{pet_id}', [\App\Http\Controllers\ListingController::class, 'create']);
+    Route::post('/listing/store', [\App\Http\Controllers\ListingController::class, 'store']);
+});
+
+Route::middleware(['auth', 'admin'])->group(function(){
+    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index']);
+
+    Route::post('/admin/{id}/block', [\App\Http\Controllers\AdminController::class, 'blockUser']);
+});
 
 Route::get('/', function () {
     return view('home');

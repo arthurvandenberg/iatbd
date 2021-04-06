@@ -105,7 +105,7 @@
                                             </form>
                                         </li>
                                         <li class="dashboard__list-item dashboard__button-container">
-                                            <form method="POST" action="/request/{{$request->id}}/{{$request_pet->owner_id}}/accept">
+                                            <form method="POST" action="/request/{{$request->id}}}}/accept">
                                                 @csrf
                                                 <x-button class="dashboard__button-accept">
                                                     {{__('Confirm')}}

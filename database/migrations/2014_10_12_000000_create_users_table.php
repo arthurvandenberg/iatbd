@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration
             $table->string('hometown');
             $table->string('description')->nullable();
             $table->boolean('blocked')->default(0);
+            $table->string('role')->default('User');
+            $table->foreign('role')->references('role')->on('roles');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

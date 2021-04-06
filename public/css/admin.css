@@ -1,0 +1,9 @@
+.admin__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,10 +15,10 @@
                 <ul class="header__list">
                     <li class="header__item"><a class="header__link" href="/pets">Dieren</a></li>
                     <li class="header__item"><a class="header__link" href="/users">Oppassers</a></li>
-                    @guest 
+                    @guest
                         <li class="header__item"><a class="register__button" href="/login">Log In</a></li>
                     @endguest
-                    @auth 
+                    @auth
                         <li class="header__item"><a class="header__link" href="/dashboard">Dashboard</a></li>
                         <li class="header__item">
                         <form method="POST" action="{{ route('logout') }}">

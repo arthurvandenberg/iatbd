@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
             'image' => 'img/users/arthur/arthur_1.jpg',
             'hometown' => 'Oude Wetering',
             'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
+            'role' => 'Admin'
         ]);
 
         DB::table('users')->insert([
@@ -57,7 +58,7 @@ class UserSeeder extends Seeder
             'hometown' => 'Leiden',
             'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
         ]);
-        
+
         DB::table('users')->insert([
             'name' => 'Theo',
             'lastname' => 'Tether',
@@ -68,7 +69,7 @@ class UserSeeder extends Seeder
             'hometown' => 'Tilburg',
             'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
         ]);
-        
+
         DB::table('users')->insert([
             'name' => 'Priscilla',
             'lastname' => 'Polkadot',

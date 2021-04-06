@@ -24,32 +24,34 @@ class RequestController extends Controller
 
         event(new Registered($pet_request));
 
-        return redirect('/dashboard');
+        return redirect()->back();
     }
 
-    public function accept($id, $owner_id){
+    public function accept($id){
         $request = \App\Models\Request::find($id);
         $listing = \App\Models\Request::find($id)->getListing;
-        if($owner_id == Auth::id()){
+        if($request->user_id == Auth::id()){
             $request->update(['confirmed' => 1]);
             $listing->update(['available' => 0]);
         }
-        return redirect('/dashboard');
+        return redirect()->back();
     }
 
-    public function finish($id, $owner_id){
+    public function finish($id){
         $request = \App\Models\Request::find($id);
-        if($owner_id == Auth::id()){
+        if($request->user_id == Auth::id()){
             $request->update(['finished' => 1]);
         }
-        return redirect('/dashboard');
+        return redirect()->back();
     }
 
-    public function delete($id, $owner_id){
+    public function delete($id){
         $request = \App\Models\Request::find($id);
-        if($owner_id == Auth::id()){
+        if($request->user_id == Auth::id()){
+            $request->delete();
+        } elseif (Auth::user()->role === 'Admin'){
             $request->delete();
         }
-        return redirect('/dashboard');
+        return redirect()->back();
     }
 }
