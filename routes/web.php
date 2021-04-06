@@ -33,6 +33,9 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/listing/create/{pet_id}', [\App\Http\Controllers\ListingController::class, 'create']);
     Route::post('/listing/store', [\App\Http\Controllers\ListingController::class, 'store']);
+
+    Route::post('/image/store', [\App\Http\Controllers\ImageController::class, 'store']);
+    Route::post('/image/{id}/delete', [\App\Http\Controllers\ImageController::class, 'delete']);
 });
 
 Route::middleware(['auth', 'admin'])->group(function(){

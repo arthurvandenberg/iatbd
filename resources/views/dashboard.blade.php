@@ -26,7 +26,7 @@
     foreach($pets_of_user as $pet){
         array_push($requested_pets, \App\Models\Pet::find($pet->id)->getRequests);
     }
-//    array_splice($requested_pets, 0,1);
+    $homeImages = \App\Models\User::find(Auth::id())->getHomeImages;
 ?>
 
 @section('content')
@@ -105,13 +105,13 @@
                                             </form>
                                         </li>
                                         <li class="dashboard__list-item dashboard__button-container">
-                                            <form method="POST" action="/request/{{$request->id}}}}/accept">
+                                            <form method="POST" action="/request/{{$request->id}}/accept">
                                                 @csrf
                                                 <x-button class="dashboard__button-accept">
                                                     {{__('Confirm')}}
                                                 </x-button>
                                             </form>
-                                            <form method="POST" action="/request/{{$request->id}}/{{$request_pet->owner_id}}/delete">
+                                            <form method="POST" action="/request/{{$request->id}}/delete">
                                                 @csrf
                                                 <x-button class="dashboard__button-decline">
                                                     {{__('Decline')}}
@@ -124,7 +124,7 @@
                                             </li>
                                         @if(\Carbon\Carbon::now() >= $request_pet->end_of_stay)
                                             <li class="dashboard__list-item">
-                                                <form method="POST" action="/request/{{$request->id}}/{{$request_pet->owner_id}}/finish" class="dashboard__return-form">
+                                                <form method="POST" action="/request/{{$request->id}}/finish" class="dashboard__return-form">
                                                     @csrf
                                                     <x-button class="dashboard__button-return">{{__('Confirm the return of ').$request_pet->name}}</x-button>
                                                 </form>
@@ -189,6 +189,34 @@
                             <li class="dashboard__list-item dashboard__pending">{{__('You haven\'t made any offers yet.')}}</li>
                         @endforelse
                     </ul>
+                </div>
+                <div class="dashboard__column">
+                    <h2 class="dashboard__column-title">{{__('Add a photo of your home to your profile')}}</h2>
+                    <div class="dashboard__home-new">
+                        <form method="POST" action="/image/store" enctype="multipart/form-data" >
+                            @csrf
+                            <x-input type="file" name="image" required/>
+                            <x-button>{{__('Upload')}}</x-button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard__home-wrapper">
+                <h2 class="dashboard__column-title">{{__('Images of your home')}}: </h2>
+                <div class="dashboard__home-images">
+                    @forelse($homeImages as $image)
+                        <div>
+                            <img src="{{$image->image}}" alt="Image of house"/>
+                            <form method="POST" action="/image/{{$image->id}}/delete">
+                                @csrf
+                                <button onClick="return confirm('{{__('Are you sure?')}}')" class="dashboard__home-delete-btn">X</button>
+                            </form>
+                        </div>
+                    @empty
+                        <div>
+                            <p>{{__('No images found')}}</p>
+                        </div>
+                    @endforelse
                 </div>
             </div>
         </div>

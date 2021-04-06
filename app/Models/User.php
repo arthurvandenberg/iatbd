@@ -62,4 +62,8 @@ class User extends Authenticatable
     public function getReviewsByUser(){
         return $this->hasMany('\App\Models\Review', 'review_by', 'id');
     }
+
+    public function getHomeImages(){
+        return $this->hasMany('\App\Models\Image', 'user_id', 'id');
+    }
 }

@@ -3,7 +3,43 @@
     flex-direction: column;
 }
 
+h2 {
+    font-weight: 300;
+    margin: 2rem 0;
+}
+
 .admin__row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+.admin__column {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin__list {
+    list-style: none;
+}
+
+.admin__list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    background: #ebe6e6;
+}
+
+.admin__list-item span {
+    padding: 1rem;
+}
+
+.admin__list-item form {
+    height: 100%;
+}
+
+.admin__button {
+    margin: 0;
 }

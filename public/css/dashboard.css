@@ -161,6 +161,39 @@
     opacity: 1;
 }
 
+.dashboard__home-images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2rem;
+}
+
+.dashboard__home-images > div {
+    width: 100%;
+    position: relative;
+}
+
+.dashboard__home-images > div img {
+    width: 100%;
+}
+
+.dashboard__home-images > div form {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+
+.dashboard__home-delete-btn {
+    width: 24px;
+    height: 24px;
+    border: 0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f3f3f3;
+    background: #ff896b;
+}
+
 @media only screen and (max-width: 768px) {
     .dashboard__row {
         grid-template-columns: 1fr;

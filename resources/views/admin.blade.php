@@ -15,7 +15,7 @@
                 <ul class="admin__list">
                     @foreach($users as $user)
                         <li class="admin__list-item">
-                            <span>{{$user->id}} {{$user->name}}</span>
+                            <span>{{$user->id." ".$user->name." ".$user->lastname." uit ".$user->hometown}}</span>
                             <form method="POST" action="/admin/{{$user->id}}/block">
                                 @csrf
                                 @if($user->blocked === 0)

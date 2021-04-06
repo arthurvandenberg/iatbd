@@ -30,18 +30,16 @@ class RequestController extends Controller
     public function accept($id){
         $request = \App\Models\Request::find($id);
         $listing = \App\Models\Request::find($id)->getListing;
-        if($request->user_id == Auth::id()){
-            $request->update(['confirmed' => 1]);
-            $listing->update(['available' => 0]);
-        }
+        $request->update(['confirmed' => 1]);
+        $listing->update(['available' => 0]);
+
         return redirect()->back();
     }
 
     public function finish($id){
         $request = \App\Models\Request::find($id);
-        if($request->user_id == Auth::id()){
-            $request->update(['finished' => 1]);
-        }
+        $request->update(['finished' => 1]);
+
         return redirect()->back();
     }
 

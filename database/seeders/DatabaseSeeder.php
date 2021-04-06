@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ListingSeeder::class,
             RequestSeeder::class,
             ReviewSeeder::class,
+            HomeImageSeeder::class,
         ]);
     }
 }
