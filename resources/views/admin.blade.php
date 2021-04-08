@@ -14,6 +14,7 @@
                 <h2>{{__('Users')}}</h2>
                 <ul class="admin__list">
                     @foreach($users as $user)
+                        @if(strtolower($user->role) === "user")
                         <li class="admin__list-item">
                             <span>{{$user->id." ".$user->name." ".$user->lastname." uit ".$user->hometown}}</span>
                             <form method="POST" action="/admin/{{$user->id}}/block">
@@ -25,6 +26,7 @@
                                 @endif
                             </form>
                         </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
