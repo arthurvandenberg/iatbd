@@ -17,7 +17,7 @@ class CheckIfBlocked
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->blocked === 0) {
+        if(!Auth::user() or Auth::user()->blocked === 0) {
             return $next($request);
         }
         return redirect('/blocked_user');
