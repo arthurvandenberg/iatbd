@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('DIERENDIERENDIEREN'),
             'image' => 'img/users/arthur/arthur_1.jpg',
             'hometown' => 'Oude Wetering',
-            'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
+            'description' => 'Mijn naam is Arthur, ik ben 25 en woon in Oude Wetering. Ik studeer Informatica aan de hogeschool in Leiden. Naast studeren werk ik als magazijnmedewerker bij een e-fulfillment agency.',
             'role' => 'Admin'
         ]);
 
@@ -100,7 +100,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('HELPMEAUBVANDIEBEERAF:('),
             'image' => 'img/users/christopher/christopher_1.jpg',
             'hometown' => 'Londen',
-            'description' => 'Check me uit, ik ben een vet hippe oppas voor al jouw huisdieren',
+            'description' => 'Ik ben hier ook alleen maar omdat het moet...',
             'blocked' => 1,
         ]);
     }

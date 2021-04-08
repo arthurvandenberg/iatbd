@@ -1,0 +1,24 @@
+.page__wrapper {
+    height: 100%;
+}
+
+.blocked__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocked__title {
+    font-size: 20vw;
+}
+
+.blocked__subtitle {
+    margin-top: 2rem;
+}
+
+.blocked__cta-link {
+    text-decoration: underline;
+    color: #ff896b;
+}

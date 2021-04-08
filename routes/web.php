@@ -12,15 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['blocked'])->group(function(){
+    Route::get('/pets', [\App\Http\Controllers\PetController::class, 'index']);
+    Route::get('/pets/{id}', [\App\Http\Controllers\PetController::class, 'show']);
 
-Route::get('/pets', [\App\Http\Controllers\PetController::class, 'index']);
-Route::get('/pets/{id}', [\App\Http\Controllers\PetController::class, 'show']);
+    Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
+    Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
+    Route::get('/users/{user_id}/reviews', [\App\Http\Controllers\ReviewController::class, 'index']);
+});
 
-Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
-Route::get('/users/{id}', [\App\Http\Controllers\UserController::class, 'show']);
-Route::get('/users/{user_id}/reviews', [\App\Http\Controllers\ReviewController::class, 'index']);
-
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['blocked', 'auth'])->group(function(){
     Route::post('/pets/create', [\App\Http\Controllers\PetController::class, 'store']);
     Route::post('/pets/{id}/delete', [\App\Http\Controllers\PetController::class, 'destroy']);
 
@@ -38,7 +39,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/image/{id}/delete', [\App\Http\Controllers\ImageController::class, 'delete']);
 });
 
-Route::middleware(['auth', 'admin'])->group(function(){
+Route::middleware(['auth', 'admin', 'blocked'])->group(function(){
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index']);
 
     Route::post('/admin/{id}/block', [\App\Http\Controllers\AdminController::class, 'blockUser']);
@@ -48,8 +49,12 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/blocked_user', function(){
+    return view('blocked');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'blocked'])->name('dashboard');
 
 require __DIR__.'/auth.php';
