@@ -47,6 +47,6 @@ class ReviewController extends Controller
         $sit_request->delete();
         $listing->delete();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('review_create_success', 'Review opgeslagen!');
     }
 }

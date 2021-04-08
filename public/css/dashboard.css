@@ -204,28 +204,6 @@
     flex: 1 1 auto;
 }
 
-.dashboard__alert {
-    border: 1px solid #9ede73;
-    border-radius: 8px;
-    padding: 1rem;
-    background: #9ede73;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    grid-area: alert;
-}
-
-.dashboard__alert-button {
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    justify-content: center;
-    background: none;
-    border-radius: 10px;
-    color: white;
-    border-color: white;
-}
-
 @media only screen and (max-width: 1024px) {
     .dashboard__home-images {
         grid-template-columns: repeat(4, 1fr);

@@ -65,6 +65,11 @@
                         <h3>{{$pet->name}} heeft op het moment geen oppas nodig.</h3>
                     @endforelse
                 </ul>
+                @if(Session::has('request_create_success'))
+                    <p class="dashboard__alert success">
+                        {{ Session::get('request_create_success') }}<button onclick="this.parentElement.remove();" class="dashboard__alert-button">x</button>
+                    </p>
+                @endif
             </div>
         </div>
     </div>

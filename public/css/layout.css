@@ -282,6 +282,28 @@ a {
     font-size: 1.5rem;
 }
 
+.dashboard__alert.success {
+    border: 1px solid #9ede73;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #9ede73;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    grid-area: alert;
+}
+
+.dashboard__alert-button {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    background: none;
+    border-radius: 10px;
+    color: white;
+    border-color: white;
+}
+
 @media only screen and (max-width: 1024px) {
     .page__wrapper {
         max-width: 80%;

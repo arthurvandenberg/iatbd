@@ -159,14 +159,17 @@
                                                     <x-button class="dashboard__review-button">{{__('Send')}}</x-button>
                                                 </form>
                                             </li>
-                                        @else
-                                            @continue
                                         @endif
                                 @endforeach
                             @empty
                                 <li>{{__('No pet')}}</li>
                             @endforelse
                         </ul>
+                        @if(Session::has('review_create_success'))
+                            <p class="dashboard__alert success">
+                                {{ Session::get('review_create_success') }}<button onclick="this.parentElement.remove();" class="dashboard__alert-button">x</button>
+                            </p>
+                        @endif
                     </div>
                 </div>
             </div>

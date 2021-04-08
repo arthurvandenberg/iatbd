@@ -24,7 +24,7 @@ class RequestController extends Controller
 
         event(new Registered($pet_request));
 
-        return redirect()->back();
+        return redirect()->back()->with('request_create_success', 'Reactie toegevoegd!');
     }
 
     public function accept($id){
