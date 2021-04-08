@@ -22,7 +22,7 @@ class ReviewSeeder extends Seeder
         ]);
 
         DB::table('reviews')->insert([
-            'reviewed_user' => 2,
+            'reviewed_user' => 3,
             'author' => 1,
             'title' => 'GEWELDIG!!!!1!',
             'review' => "Nouja was wel okee eigenlijk..",
@@ -43,7 +43,7 @@ class ReviewSeeder extends Seeder
         ]);
 
         DB::table('reviews')->insert([
-            'reviewed_user' => 2,
+            'reviewed_user' => 1,
             'author' => 6,
             'title' => 'GEWELDIG!!!!1!',
             'review' => "Nouja was wel okee eigenlijk..",
