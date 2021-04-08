@@ -60,6 +60,6 @@ class PetController extends Controller
 
         event(new Registered($pet));
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('pet_create_success', $pet->name.' staat op de lijst!');
     }
 }

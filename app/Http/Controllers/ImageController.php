@@ -33,7 +33,7 @@ class ImageController extends Controller
 
         event(new Registered($image));
 
-        return redirect()->back();
+        return redirect()->back()->with('image_upload_success', 'Je foto is geuploaded');
     }
 
     public function delete($id){

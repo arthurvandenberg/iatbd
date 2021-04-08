@@ -32,6 +32,6 @@ class ListingController extends Controller
 
         event(new Registered($listing));
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('listing_success', 'Aanbod succesvol aangemaakt.');
     }
 }

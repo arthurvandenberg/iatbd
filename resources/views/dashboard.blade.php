@@ -63,6 +63,11 @@
                         <x-button class="dashboard__button-pet-form">
                             {{ __('Register') }}
                         </x-button>
+                        @if(Session::has('pet_create_success'))
+                            <p class="dashboard__alert success">
+                                {{ Session::get('pet_create_success') }}<button onclick="this.parentElement.remove();" class="dashboard__alert-button">x</button>
+                            </p>
+                        @endif
                     </form>
                 </div>
                 <div class="dashboard__column right">
@@ -85,6 +90,11 @@
                                 </li>
                             @endforeach
                         </ul>
+                        @if(Session::has('listing_success'))
+                            <p class="dashboard__alert success">
+                                {{ Session::get('listing_success') }}<button onclick="this.parentElement.remove();" class="dashboard__alert-button">x</button>
+                            </p>
+                        @endif
                     </div>
                     <div class="dashboard__column-row">
                         <h2 class="dashboard__column-title">{{ __('Your offers: ') }}</h2>
@@ -198,6 +208,11 @@
                             <x-input type="file" name="image" required/>
                             <x-button>{{__('Upload')}}</x-button>
                         </form>
+                        @if(Session::has('image_upload_success'))
+                            <p class="dashboard__alert success">
+                                {{ Session::get('image_upload_success') }}<button onclick="this.parentElement.remove();" class="dashboard__alert-button">x</button>
+                            </p>
+                        @endif
                     </div>
                 </div>
             </div>
