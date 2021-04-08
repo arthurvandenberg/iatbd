@@ -84,7 +84,8 @@
         "name kind"
         "image image"
         "description description"
-        "register register";
+        "register register"
+        "alert alert";
 }
 
 
@@ -204,7 +205,6 @@
 }
 
 .dashboard__alert {
-    width: 100%;
     border: 1px solid #9ede73;
     border-radius: 8px;
     padding: 1rem;
@@ -212,6 +212,7 @@
     color: white;
     display: flex;
     justify-content: space-between;
+    grid-area: alert;
 }
 
 .dashboard__alert-button {
