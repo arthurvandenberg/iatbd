@@ -33,6 +33,7 @@
             </div>
         </div>
     </div>
+    <h2 class="userProfile__reviews-title">Bekijk de foto's van {{$user->name}}</h2>
     <div class="userGallery">
         <img onmouseenter="hoverImage(this)" class="userGallery__image" src="{{asset($user->image)}}" alt="Afbeelding van {{$user->name}}"/>
         @foreach($homeImages as $homeImage)

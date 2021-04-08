@@ -20,6 +20,7 @@ class PetController extends Controller
             'pet' => \App\Models\Pet::find($id),
             'owner' => \App\Models\Pet::find($id)->getOwner,
             'listings' => \App\Models\Pet::find($id)->getListings,
+            'user' => Auth::user()
         ]);
     }
 

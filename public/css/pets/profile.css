@@ -62,7 +62,7 @@
 }
 
 .petProfile__button {
-    font-size: initial;
+    display: inline-block;
     text-decoration: none;
     padding: 1rem 1.5rem;
     box-sizing: border-box;

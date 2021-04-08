@@ -31,32 +31,40 @@
                         $endOfStay = new DateTime($listing->end_of_stay);
                         $interval = $startOfStay->diff($endOfStay);
                         $lengthOfStay = $interval->format('%a');
+
                         ?>
                         <li class="petProfile__listings-list-item">
                             <span><p>Vanaf: {{date('d-m-Y', strtotime($listing->available_date))}} voor {{$lengthOfStay}} @if($lengthOfStay > 1) dagen @else dag @endif Vergoeding: {{$listing->compensation_amount}}</p></span>
-                            @if($listing->available === 1)
-                            @auth
-                                <form method="POST" action="/request/create">
-                                    @csrf
-                                    <input name="pet_id" type="hidden" value="{{$pet->id}}"/>
-                                    <input name="user_id" type="hidden" value="{{Auth::id()}}"/>
-                                    <input name="listing_id" type="hidden" value="{{$listing->id}}"/>
-                                    <x-button class="petProfile__button">Bied je aan!</x-button>
-                                </form>
-                            @endauth
-                            @guest
-                                <a href="/login" class="petProfile__button">Log in om je aan te bieden!</a>
-                            @endguest
+                            @if($listing->available === 0)
+                                <x-button type="disabled" disabled class="petProfile__button disabled">Niet meer beschikbaar</x-button>
                             @else
-                                <x-button type="disabled" class="petProfile__button disabled">Niet meer beschikbaar</x-button>
+                                @auth
+                                    <form method="POST" action="/request/create">
+                                        @csrf
+                                        <input name="pet_id" type="hidden" value="{{$pet->id}}"/>
+                                        <input name="user_id" type="hidden" value="{{$user->id}}"/>
+                                        <input name="listing_id" type="hidden" value="{{$listing->id}}"/>
+                                        @if($user->blocked === 1)
+                                            <x-button type="disabled" disabled class="petProfile__button disabled">Je kunt niet reageren</x-button>
+                                        @elseif(count(\App\Models\Listing::find($listing->id)->getRequests->where('user_id', $user->id)) > 0)
+                                            <x-button type="disabled" disabled class="petProfile__button disabled">Je hebt al gereageerd</x-button>
+                                        @else
+                                            <x-button class="petProfile__button">Bied je aan!</x-button>
+                                        @endif
+                                    </form>
+                                @endauth
+                                @guest
+                                    <form method="GET" action="/login">
+                                        @csrf
+                                        <x-button class="petProfile__button">Log in om je aan te bieden!</x-button>
+                                    </form>
+                                @endguest
                             @endif
                         </li>
                     @empty
                         <h3>{{$pet->name}} heeft op het moment geen oppas nodig.</h3>
                     @endforelse
                 </ul>
-            </div>
-            <div class="petProfile__btnSection">
             </div>
         </div>
     </div>
