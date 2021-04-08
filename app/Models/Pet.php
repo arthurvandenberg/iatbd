@@ -35,4 +35,13 @@ class Pet extends Model
     public function getListings(){
         return $this->hasMany('\App\Models\Listing', 'pet_id', 'id');
     }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($pet) {
+            $pet->getRequests()->delete();
+            $pet->getListings()->delete();
+        });
+    }
 }

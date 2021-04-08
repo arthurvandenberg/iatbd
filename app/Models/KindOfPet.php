@@ -12,4 +12,12 @@ class KindOfPet extends Model
     public function allPets(){
         return $this->hasMany('\App\Models\Pet', 'kind', 'kind');
     }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($kindofpet) {
+            $kindofpet->allPets()->delete();
+        });
+    }
 }

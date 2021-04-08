@@ -66,4 +66,16 @@ class User extends Authenticatable
     public function getHomeImages(){
         return $this->hasMany('\App\Models\Image', 'user_id', 'id');
     }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($user) {
+            $user->getPets()->delete();
+            $user->getRequests()->delete();
+            $user->getReviewsOfUser()->delete();
+            $user->getReviewsByUser()->delete();
+            $user->getHomeImages()->delete();
+        });
+    }
 }

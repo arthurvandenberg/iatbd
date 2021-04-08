@@ -22,4 +22,12 @@ class Listing extends Model
     public function getRequests(){
         return $this->hasMany('\App\Models\Request', 'listing_id', 'id');
     }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($listing) {
+            $listing->getRequests()->delete();
+        });
+    }
 }
