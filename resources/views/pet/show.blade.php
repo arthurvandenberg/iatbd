@@ -10,19 +10,19 @@
 
 @section('content')
     <a href="/pets">&larr; Terug naar het overzicht</a>
-    <article class="petProfile">
+    <div class="petProfile">
         <figure class="petProfile__gallery">
             <img class="petProfile__image" src="{{asset($pet->image)}}"/>
         </figure>
-        <section class="petProfile__info">
-            <div class="petProfile__petInfo">
+        <article class="petProfile__info">
+            <section class="petProfile__petInfo">
                 <h1 class="petProfile__title">{{$pet->name}} de {{$pet->kind}}</h1>
                 <sub>Eigenaar: {{$owner->name}}</sub>
-            </div>
-            <div class="petProfile__description">
+            </section>
+            <section class="petProfile__description">
                 <p>{{$pet->description}}</p>
-            </div>
-            <div class="petProfile__listings">
+            </section>
+            <section class="petProfile__listings">
                 <h2 class="petProfile__listings-title">{{__('Sitting Options')}}</h2>
                 <ul class="petProfile__listings-list">
                     @forelse($listings as $listing)
@@ -70,7 +70,7 @@
                         {{ Session::get('request_create_success') }}<button onclick="this.parentElement.remove();" class="dashboard__alert-button">x</button>
                     </p>
                 @endif
-            </div>
-        </section>
-    </article>
+            </section>
+        </article>
+    </div>
 @endsection

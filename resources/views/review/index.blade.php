@@ -22,9 +22,9 @@
                     <p class="reviewCard__review">{{$review->review}}</p>
                     <p class="reviewCard__reviewer">Review door: {{$author->name." ".$author->lastname}}</p>
                 </section>
-                <section class="reviewCard__imageContent">
+                <figure class="reviewCard__imageContent">
                     <img class="reviewCard__image" src="{{asset($author->image)}}" alt="{{$author->name." ".$author->lastname}}"/>
-                </section>
+                </figure>
             </article>
         @empty
             <h2>{{__('No Reviews about this User')}}</h2>

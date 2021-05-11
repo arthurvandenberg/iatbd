@@ -31,38 +31,36 @@
 
 @section('content')
     <h1 class="page__title">Dierenoverzicht</h1>
-    <article class="petCatalog__wrapper">
-        <aside class="petCatalog__sidebar">
-            <label for="petFilter">Filter op: </label>
-            <select id="petFilter" onChange="filterAnimals(this)" class="auth__input">
-                <option>Alle diersoorten</option>
-                @foreach($kinds_of_pet as $kind_of_pet)
-                    <option>{{$kind_of_pet->kind}}</option>
-                @endforeach
-            </select>
-        </aside>
-        <section class="petCatalog">
-            @foreach($pets as $pet)
-                <?php $owner = \App\Models\User::find($pet->owner_id); ?>
-                @if($pet->suspended === 0)
-                    <article class="petCard {{$pet->kind}}">
-                        <a href="/pets/{{{$pet->id}}}">
-                            <figure class="petCard__figure">
-                                <img class="petCard__image" src="{{$pet->image}}" alt="{{$pet->name}}"/>
-                            </figure>
-                            <section class="petCard__text">
-                                <section class="petCard__petInfo">
-                                    <h2>{{$pet->name}}</h2>
-                                    <sub>{{$owner->hometown}}</sub>
-                                </section>
-                                <section class="petCard__btnSection">
-                                    <x-button class="petCard__button" href="/pets/{{{$pet->id}}}">Bekijk het profiel van {{$pet->name}}!</x-button>
-                                </section>
-                            </section>
-                        </a>
-                    </article>
-                @endif
+    <div class="petCatalog__sidebar">
+        <label for="petFilter">Filter op: </label>
+        <select id="petFilter" onChange="filterAnimals(this)" class="auth__input">
+            <option>Alle diersoorten</option>
+            @foreach($kinds_of_pet as $kind_of_pet)
+                <option>{{$kind_of_pet->kind}}</option>
             @endforeach
-        </section>
-    </article>
+        </select>
+    </div>
+    <div class="petCatalog">
+        @foreach($pets as $pet)
+            <?php $owner = \App\Models\User::find($pet->owner_id); ?>
+            @if($pet->suspended === 0)
+                <article class="petCard {{$pet->kind}}">
+                    <a href="/pets/{{{$pet->id}}}">
+                        <figure class="petCard__figure">
+                            <img class="petCard__image" src="{{$pet->image}}" alt="{{$pet->name}}"/>
+                        </figure>
+                        <section class="petCard__text">
+                            <div class="petCard__petInfo">
+                                <h2>{{$pet->name}}</h2>
+                                <sub>{{$owner->hometown}}</sub>
+                            </div>
+                            <div class="petCard__btnSection">
+                                <x-button class="petCard__button" href="/pets/{{{$pet->id}}}">Bekijk het profiel van {{$pet->name}}!</x-button>
+                            </div>
+                        </section>
+                    </a>
+                </article>
+            @endif
+        @endforeach
+    </div>
 @endsection
