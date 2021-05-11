@@ -117,6 +117,7 @@
                                     <li class="dashboard__list-item dashboard__button-container">
                                         <form method="POST" action="/request/{{$request->id}}/accept">
                                             @csrf
+                                            @method('PATCH')
                                             <x-button class="dashboard__button-accept">
                                                 {{__('Confirm')}}
                                             </x-button>
@@ -137,6 +138,7 @@
                                         <li class="dashboard__list-item">
                                             <form method="POST" action="/request/{{$request->id}}/finish" class="dashboard__return-form">
                                                 @csrf
+                                                @method('PATCH')
                                                 <x-button class="dashboard__button-return">{{__('Confirm the return of ').$request_pet->name}}</x-button>
                                             </form>
                                         </li>
