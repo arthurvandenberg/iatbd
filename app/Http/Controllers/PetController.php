@@ -24,7 +24,7 @@ class PetController extends Controller
         ]);
     }
 
-    public function destroy($id){
+    public function delete($id){
         $pet = Pet::find($id);
         $pet->delete();
 

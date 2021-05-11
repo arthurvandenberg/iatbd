@@ -70,7 +70,7 @@
                         @endif
                     </form>
                 </div>
-                <div class="dashboard__column right">
+                <section class="dashboard__column right">
                     <div class="dashboard__column-row">
                         <h2 class="dashboard__column-title">{{ __('Your Pets: ') }}</h2>
                         <ul class="dashboard__list">
@@ -84,6 +84,7 @@
                                         </form>
                                         <form method="POST" action="/pets/{{$pet->id}}/delete">
                                             @csrf
+                                            @method('DELETE')
                                             <x-button onClick="return confirm('{{__('Are you sure?')}}')" class="dashboard__button">{{__('Delete')}}</x-button>
                                         </form>
                                     </div>
@@ -123,6 +124,7 @@
                                             </form>
                                             <form method="POST" action="/request/{{$request->id}}/delete">
                                                 @csrf
+                                                @method('DELETE')
                                                 <x-button class="dashboard__button-decline">
                                                     {{__('Decline')}}
                                                 </x-button>
@@ -171,7 +173,7 @@
                             </p>
                         @endif
                     </div>
-                </div>
+                </section>
             </div>
             <div class="dashboard__row">
                 <div class="dashboard__column">
@@ -186,6 +188,7 @@
                                     <span>{{__('You have offered to sit ').$my_request_pet->name}}</span>
                                     <form method="POST" action="/request/{{$my_request->id}}/delete">
                                         @csrf
+                                        @method('DELETE')
                                         <x-button class="dashboard__button">
                                             {{__('Cancel Offer')}}
                                         </x-button>
@@ -227,6 +230,7 @@
                             <img src="{{$image->image}}" alt="Image of house"/>
                             <form method="POST" action="/image/{{$image->id}}/delete">
                                 @csrf
+                                @method('DELETE')
                                 <button onClick="return confirm('{{__('Are you sure?')}}')" class="dashboard__home-delete-btn">X</button>
                             </form>
                         </div>

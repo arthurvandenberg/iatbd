@@ -23,26 +23,26 @@ Route::middleware(['blocked'])->group(function(){
 
 Route::middleware(['blocked', 'auth'])->group(function(){
     Route::post('/pets/create', [\App\Http\Controllers\PetController::class, 'store']);
-    Route::post('/pets/{id}/delete', [\App\Http\Controllers\PetController::class, 'destroy']);
+    Route::delete('/pets/{id}/delete', [\App\Http\Controllers\PetController::class, 'delete']);
 
     Route::post('/users/reviews/store/{request_id}', [\App\Http\Controllers\ReviewController::class, 'store']);
 
     Route::post('/request/create', [\App\Http\Controllers\RequestController::class, 'store']);
-    Route::post('/request/{id}/accept', [\App\Http\Controllers\RequestController::class, 'accept']);
-    Route::post('/request/{id}/delete', [\App\Http\Controllers\RequestController::class, 'delete']);
-    Route::post('/request/{id}/finish', [\App\Http\Controllers\RequestController::class, 'finish']);
+    Route::patch('/request/{id}/accept', [\App\Http\Controllers\RequestController::class, 'accept']);
+    Route::delete('/request/{id}/delete', [\App\Http\Controllers\RequestController::class, 'delete']);
+    Route::patch('/request/{id}/finish', [\App\Http\Controllers\RequestController::class, 'finish']);
 
     Route::get('/listing/create/{pet_id}', [\App\Http\Controllers\ListingController::class, 'create']);
     Route::post('/listing/store', [\App\Http\Controllers\ListingController::class, 'store']);
 
     Route::post('/image/store', [\App\Http\Controllers\ImageController::class, 'store']);
-    Route::post('/image/{id}/delete', [\App\Http\Controllers\ImageController::class, 'delete']);
+    Route::delete('/image/{id}/delete', [\App\Http\Controllers\ImageController::class, 'delete']);
 });
 
 Route::middleware(['auth', 'admin', 'blocked'])->group(function(){
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index']);
 
-    Route::post('/admin/{id}/block', [\App\Http\Controllers\AdminController::class, 'blockUser']);
+    Route::patch('/admin/{id}/block', [\App\Http\Controllers\AdminController::class, 'blockUser']);
 });
 
 Route::get('/', function () {
