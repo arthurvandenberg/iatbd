@@ -29,8 +29,8 @@ Route::middleware(['blocked', 'auth'])->group(function(){
 
     Route::post('/request/create', [\App\Http\Controllers\RequestController::class, 'store']);
     Route::patch('/request/{id}/accept', [\App\Http\Controllers\RequestController::class, 'accept']);
-    Route::delete('/request/{id}/delete', [\App\Http\Controllers\RequestController::class, 'delete']);
     Route::patch('/request/{id}/finish', [\App\Http\Controllers\RequestController::class, 'finish']);
+    Route::delete('/request/{id}/delete', [\App\Http\Controllers\RequestController::class, 'delete']);
 
     Route::get('/listing/create/{pet_id}', [\App\Http\Controllers\ListingController::class, 'create']);
     Route::post('/listing/store', [\App\Http\Controllers\ListingController::class, 'store']);
