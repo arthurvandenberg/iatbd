@@ -24,8 +24,8 @@
     padding: 1rem 1.5rem;
     margin-top: 1rem;
     box-sizing: border-box;
-    border: 2px solid #ff896b;
-    border-radius: 5px;
+    border: 0.2rem solid #ff896b;
+    border-radius: 0.5rem;
     background: #ff896b;
     color: #f3f3f3;
     text-align: center;

@@ -7,10 +7,10 @@
 @endsection
 
 @section('content')
-    <div class="admin__wrapper">
+    <article class="admin__wrapper">
         <h1>{{__('Welcome '.Auth::user()->name)}}</h1>
-        <div class="admin__row">
-            <div class="admin__column">
+        <section class="admin__row">
+            <section class="admin__column">
                 <h2>{{__('Users')}}</h2>
                 <ul class="admin__list">
                     @foreach($users as $user)
@@ -29,8 +29,8 @@
                         @endif
                     @endforeach
                 </ul>
-            </div>
-            <div class="admin__column">
+            </section>
+            <section class="admin__column">
                 <h2>{{__('Active Requests')}}</h2>
                 <ul class="admin__list">
                     @foreach($requests as $request)
@@ -47,7 +47,7 @@
                         </li>
                     @endforeach
                 </ul>
-            </div>
-        </div>
-    </div>
+            </section>
+        </section>
+    </article>
 @endsection

@@ -11,14 +11,14 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: #ebe6e6;
-    border-radius: 8px;
+    border-radius: 0.8rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
 }
 
 .userCard__image {
     width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: .8rem;
+    border-top-right-radius: .8rem;
 }
 
 .userCard__figure {
@@ -60,8 +60,8 @@
     text-decoration: none;
     padding: 1rem 1.5rem;
     box-sizing: border-box;
-    border: 2px solid #ff896b;
-    border-radius: 5px;
+    border: .2rem solid #ff896b;
+    border-radius: .5rem;
     background: #ff896b;
     color: #f3f3f3;
     width: 100%;

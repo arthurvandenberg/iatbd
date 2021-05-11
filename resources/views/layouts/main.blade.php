@@ -69,8 +69,8 @@
             <div class="page__wrapper">@yield('content')</div>
         </main>
         <footer class="footer">
-            <div class="footer__links">
-                <div class="footer__column">
+            <article class="footer__links">
+                <section class="footer__column">
                     <ul class="footer__list">
                         <li class="footer__item"><a href="#" class="footer__link">Algemene voorwaarden</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Huisregels</a></li>
@@ -78,18 +78,18 @@
                         <li class="footer__item"><a href="#" class="footer__link">Nieuwsbrief</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Contact</a></li>
                     </ul>
-                </div>
-                <div class="footer__column">
+                </section>
+                <section class="footer__column">
                     <ul class="footer__list">
                         <li class="footer__item"><a href="#" class="footer__link">Werken als Oppasser</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Je huisdier inschrijven</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Social Media</a></li>
                     </ul>
-                </div>
-            </div>
-            <div class="footer__copyright">
+                </section>
+            </article>
+            <aside class="footer__copyright">
                 <p>© Copyright 2021 | Barkplaats</p>
-            </div>
+            </aside>
         </footer>
     </body>
 </html>

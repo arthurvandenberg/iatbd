@@ -168,26 +168,26 @@
     grid-gap: 2rem;
 }
 
-.dashboard__home-images > div {
+.dashboard__home-images figure {
     width: 100%;
     position: relative;
 }
 
-.dashboard__home-images > div img {
+.dashboard__home-images figure img {
     width: 100%;
 }
 
-.dashboard__home-images > div form {
+.dashboard__home-images figure form {
     position: absolute;
-    top: 1px;
-    right: 1px;
+    top: 0.1rem;
+    right: 0.1rem;
 }
 
 .dashboard__home-delete-btn {
-    width: 24px;
-    height: 24px;
+    width: 2.4rem;
+    height: 2.4rem;
     border: 0;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     display: flex;
     justify-content: center;
     align-items: center;

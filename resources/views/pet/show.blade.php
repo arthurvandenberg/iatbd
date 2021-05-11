@@ -10,11 +10,11 @@
 
 @section('content')
     <a href="/pets">&larr; Terug naar het overzicht</a>
-    <div class="petProfile">
-        <div class="petProfile__gallery">
+    <article class="petProfile">
+        <figure class="petProfile__gallery">
             <img class="petProfile__image" src="{{asset($pet->image)}}"/>
-        </div>
-        <div class="petProfile__info">
+        </figure>
+        <section class="petProfile__info">
             <div class="petProfile__petInfo">
                 <h1 class="petProfile__title">{{$pet->name}} de {{$pet->kind}}</h1>
                 <sub>Eigenaar: {{$owner->name}}</sub>
@@ -71,6 +71,6 @@
                     </p>
                 @endif
             </div>
-        </div>
-    </div>
+        </section>
+    </article>
 @endsection

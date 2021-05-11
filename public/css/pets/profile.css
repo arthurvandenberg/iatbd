@@ -9,6 +9,7 @@
 
 .petProfile__title {
     font-weight: 400;
+    font-size: 3rem;
 }
 
 .petProfile__info {
@@ -16,17 +17,12 @@
     flex-direction: column;
 }
 
-.petProfile__info > div {
+.petProfile__info div {
     margin-bottom: 2rem;
 }
 
 .petProfile__image {
     width: 100%;
-}
-
-.petProfile__stayInfo > p {
-    display: flex;
-    justify-content: space-between;
 }
 
 .petProfile__listings-title {
@@ -66,13 +62,13 @@
     text-decoration: none;
     padding: 1rem 1.5rem;
     box-sizing: border-box;
-    border: 1px solid #ff896b;
+    border: 0.1rem solid #ff896b;
     background: #ff896b;
     text-align: center;
     color: #f3f3f3;
     cursor: pointer;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
     height: 100%;
     margin: 0;
 }

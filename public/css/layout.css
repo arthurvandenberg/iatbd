@@ -45,8 +45,8 @@ a {
     text-decoration: none;
     padding: 1rem 1.5rem;
     box-sizing: border-box;
-    border: 2px solid #ff896b;
-    border-radius: 5px;
+    border: 0.2rem solid #ff896b;
+    border-radius: 0.5rem;
     background: #ff896b;
     text-align: center;
 }
@@ -160,7 +160,7 @@ a {
     justify-content: space-between;
     padding: 1.5rem 2rem;
     background-color: #ebe6e6;
-    border-radius: 8px;
+    border-radius: .8rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
 }
 
@@ -200,12 +200,12 @@ a {
 }
 
 .auth__label-checkbox .auth__checkmark:after {
-    left: 6px;
-    top: 2px;
-    width: 5px;
-    height: 10px;
+    left: 0.6rem;
+    top: 0.2rem;
+    width: 0.5rem;
+    height: 1rem;
     border: solid white;
-    border-width: 0 3px 3px 0;
+    border-width: 0 0.3rem 0.3rem 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -217,7 +217,7 @@ a {
     padding: 0.5rem;
     font-size: 1.8rem;
     border-radius: 0.8rem;
-    border-width: 2px;
+    border-width: 0.2rem;
     border-style: inset;
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
@@ -225,7 +225,7 @@ a {
 
 .auth__input:focus {
     outline: none;
-    outline-offset: 0px;
+    outline-offset: 0rem;
     border-color: #ff896b;
 }
 
@@ -244,7 +244,7 @@ a {
     height: 2rem;
     width: 2rem;
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: .4rem;
 }
 
 .auth__checkmark:after {
@@ -269,8 +269,8 @@ a {
     text-decoration: none;
     padding: 1rem 1.5rem;
     box-sizing: border-box;
-    border: 1px solid #ff896b;
-    border-radius: 5px;
+    border: .1rem solid #ff896b;
+    border-radius: .5rem;
     background: #ff896b;
     text-align: center;
     color: #f3f3f3;
@@ -283,8 +283,8 @@ a {
 }
 
 .dashboard__alert.success {
-    border: 1px solid #9ede73;
-    border-radius: 8px;
+    border: .1rem solid #9ede73;
+    border-radius: .8rem;
     padding: 1rem;
     background: #9ede73;
     color: white;
@@ -299,7 +299,7 @@ a {
     display: flex;
     justify-content: center;
     background: none;
-    border-radius: 10px;
+    border-radius: 1rem;
     color: white;
     border-color: white;
 }
@@ -320,7 +320,7 @@ a {
         position: absolute;
         width: 100%;
         z-index: 1;
-        transform: translateY(-300px);
+        transform: translateY(-30rem);
         transition: all 0.5s ease-out;
     }
 
@@ -339,7 +339,7 @@ a {
         justify-content: center;
         padding: 1rem 0;
         margin: 0;
-        border-bottom: 1px solid #ebe6e6;
+        border-bottom: .1rem solid #ebe6e6;
     }
 
     .header__menuButton {
@@ -348,23 +348,23 @@ a {
     }
 
     .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
+        width: 3.5rem;
+        height: .5rem;
         background-color: #333;
-        margin: 6px 0;
+        margin: .6rem 0;
         transition: 0.4s;
     }
 
     .change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
+        -webkit-transform: rotate(-45deg) translate(-.9rem, .6rem);
+        transform: rotate(-45deg) translate(-.9rem, .6rem);
     }
 
     .change .bar2 {opacity: 0;}
 
     .change .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
-        transform: rotate(45deg) translate(-8px, -8px);
+        -webkit-transform: rotate(45deg) translate(-.8rem, -.8rem);
+        transform: rotate(45deg) translate(-.8rem, -.8rem);
     }
 
     .header__navigation-desktop {

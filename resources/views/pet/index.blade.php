@@ -31,8 +31,8 @@
 
 @section('content')
     <h1 class="page__title">Dierenoverzicht</h1>
-    <div class="petCatalog__wrapper">
-        <div class="petCatalog__sidebar">
+    <article class="petCatalog__wrapper">
+        <aside class="petCatalog__sidebar">
             <label for="petFilter">Filter op: </label>
             <select id="petFilter" onChange="filterAnimals(this)" class="auth__input">
                 <option>Alle diersoorten</option>
@@ -40,29 +40,29 @@
                     <option>{{$kind_of_pet->kind}}</option>
                 @endforeach
             </select>
-        </div>
-        <div class="petCatalog">
+        </aside>
+        <section class="petCatalog">
             @foreach($pets as $pet)
                 <?php $owner = \App\Models\User::find($pet->owner_id); ?>
                 @if($pet->suspended === 0)
-                    <div class="petCard {{$pet->kind}}">
+                    <article class="petCard {{$pet->kind}}">
                         <a href="/pets/{{{$pet->id}}}">
-                            <div class="petCard__figure">
+                            <figure class="petCard__figure">
                                 <img class="petCard__image" src="{{$pet->image}}" alt="{{$pet->name}}"/>
-                            </div>
-                            <div class="petCard__text">
-                                <div class="petCard__petInfo">
+                            </figure>
+                            <section class="petCard__text">
+                                <section class="petCard__petInfo">
                                     <h2>{{$pet->name}}</h2>
                                     <sub>{{$owner->hometown}}</sub>
-                                </div>
-                                <div class="petCard__btnSection">
+                                </section>
+                                <section class="petCard__btnSection">
                                     <x-button class="petCard__button" href="/pets/{{{$pet->id}}}">Bekijk het profiel van {{$pet->name}}!</x-button>
-                                </div>
-                            </div>
+                                </section>
+                            </section>
                         </a>
-                    </div>
+                    </article>
                 @endif
             @endforeach
-        </div>
-    </div>
+        </section>
+    </article>
 @endsection
