@@ -23,7 +23,14 @@
                     <p class="reviewCard__reviewer">Review door: {{$author->name." ".$author->lastname}}</p>
                 </section>
                 <figure class="reviewCard__imageContent">
-                    <img class="reviewCard__image" src="{{asset($author->image)}}" alt="{{$author->name." ".$author->lastname}}"/>
+                    <img class="reviewCard__image"
+                         srcset="
+                         {{asset($author->image640)}} 640w,
+                         {{asset($author->image1280)}} 1280w,
+                         {{asset($author->image1920)}} 1920w
+                         "
+                         sizes="(min-width: 420px) 375px, 91vw"
+                         src="{{asset($author->image)}}" alt="{{$author->name." ".$author->lastname}}"/>
                 </figure>
             </article>
         @empty

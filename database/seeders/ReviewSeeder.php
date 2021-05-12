@@ -30,7 +30,7 @@ class ReviewSeeder extends Seeder
 
         DB::table('reviews')->insert([
             'reviewed_user' => 2,
-            'author' => 5,
+            'author' => 7,
             'title' => 'GEWELDIG!!!!1!',
             'review' => "Nouja was wel okee eigenlijk..",
         ]);

@@ -12,7 +12,14 @@
     <a href="/pets">&larr; Terug naar het overzicht</a>
     <div class="petProfile">
         <figure class="petProfile__gallery">
-            <img class="petProfile__image" src="{{asset($pet->image)}}"/>
+            <img class="petProfile__image"
+                 srcset="
+                 {{asset($pet->image640)}} 640w,
+                 {{asset($pet->image1280)}} 1280w,
+                 {{asset($pet->image1920)}} 1920w
+                 "
+                 sizes="(min-width: 1040px) 36.02vw, (min-width: 780px) 48.33vw, 95vw"
+                 src="{{asset($pet->image)}}"/>
         </figure>
         <article class="petProfile__info">
             <section class="petProfile__petInfo">

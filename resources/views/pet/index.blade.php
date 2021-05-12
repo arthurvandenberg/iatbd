@@ -47,7 +47,14 @@
                 <article class="petCard {{$pet->kind}}">
                     <a href="/pets/{{{$pet->id}}}">
                         <figure class="petCard__figure">
-                            <img class="petCard__image" src="{{$pet->image}}" alt="{{$pet->name}}"/>
+                            <img class="petCard__image"
+                                 srcset="
+                                 {{$pet->image640}} 640w,
+                                 {{$pet->image1280}} 1280w,
+                                 {{$pet->image1920}} 1920w
+                                 "
+                                 sizes="(min-width: 1040px) calc(20vw - 27px), (min-width: 780px) calc(26.67vw - 27px), (min-width: 380px) calc(47.37vw - 19px), 95vw"
+                                 src="{{$pet->image}}" alt="{{$pet->name}}"/>
                         </figure>
                         <section class="petCard__text">
                             <div class="petCard__petInfo">
