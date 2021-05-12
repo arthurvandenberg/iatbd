@@ -20,7 +20,10 @@ class CreateUsersTable extends Migration
             $table->integer('age');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('image')->default('/img/users/default_1.jpg');
+            $table->string('image')->default('/img/users/default_1_1920.jpg');
+            $table->string('image640')->default('/img/users/default_1_640.jpg');
+            $table->string('image1280')->default('/img/users/default_1_1280.jpg');
+            $table->string('image1920')->default('/img/users/default_1_1920.jpg');
             $table->string('hometown');
             $table->string('description')->nullable();
             $table->boolean('blocked')->default(0);

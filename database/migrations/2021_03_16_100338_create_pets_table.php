@@ -18,7 +18,10 @@ class CreatePetsTable extends Migration
             $table->foreignId('owner_id')->constrained('users');
             $table->string('name');
             $table->string('kind');
-            $table->string('image')->default('img/pets/default_1.jpg');
+            $table->string('image')->default('img/pets/default_1_1920.jpg');
+            $table->string('image640')->default('img/pets/default_1_640.jpg');
+            $table->string('image1280')->default('img/pets/default_1_1280.jpg');
+            $table->string('image1920')->default('img/pets/default_1_1920.jpg');
             $table->foreign('kind')->references('kind')->on('kind_of_pet');
             $table->string('description')->nullable();
             $table->boolean('suspended')->default(false);
