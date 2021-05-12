@@ -17,9 +17,9 @@ class CreateImagesTable extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->string('image');
-            $table->string('image640');
-            $table->string('image1280');
-            $table->string('image1920');
+            $table->string('image640')->nullable();
+            $table->string('image1280')->nullable();
+            $table->string('image1920')->nullable();
             $table->timestamps();
         });
     }
