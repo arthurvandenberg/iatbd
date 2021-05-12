@@ -47,14 +47,17 @@ class PetController extends Controller
 
         $imageName = time().'.'.$request->image->extension();
 
-        $request->image->move(public_path('img/pets'), $imageName);
+        $request->image->move(public_path('img/pets/'.strtolower($request->name)), $imageName);
 
 
         $pet = Pet::create([
             'owner_id' => Auth::id(),
             'name' => $request->name,
             'kind' => $request->kind,
-            'image' => asset('img/pets/'.$imageName),
+            'image' => asset('img/pets/'.strtolower($request->name).'/'.$imageName),
+            'image640' => asset('img/pets/'.strtolower($request->name).'/'.$imageName),
+            'image1280' => asset('img/pets/'.strtolower($request->name).'/'.$imageName),
+            'image1920' => asset('img/pets/'.strtolower($request->name).'/'.$imageName),
             'description' => $request->description,
         ]);
 

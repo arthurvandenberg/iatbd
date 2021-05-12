@@ -29,6 +29,9 @@ class ImageController extends Controller
         $image = Image::create([
             'user_id' => Auth::id(),
             'image' => asset('img/users/'.strtolower(Auth::user()->name).'/home/'.$imageName),
+            'image640' => asset('img/users/'.strtolower(Auth::user()->name).'/home/'.$imageName),
+            'image1280' => asset('img/users/'.strtolower(Auth::user()->name).'/home/'.$imageName),
+            'image1920' => asset('img/users/'.strtolower(Auth::user()->name).'/home/'.$imageName),
         ]);
 
         event(new Registered($image));

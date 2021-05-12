@@ -36,3 +36,15 @@
         left: 1%;
     }
 }
+
+@media only screen and (max-width: 640px) {
+    .page__main {
+        background-image: url("../img/hero_2_640.jpg");
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .page__main {
+        background-image: url("../img/hero_2_1024.jpg");
+    }
+}
