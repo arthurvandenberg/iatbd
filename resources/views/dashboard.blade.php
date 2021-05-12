@@ -228,7 +228,14 @@
             <section class="dashboard__home-images">
                 @forelse($homeImages as $image)
                     <figure>
-                        <img src="{{$image->image}}" alt="Image of house"/>
+                        <img
+                            srcset="
+                             {{asset($image->image640)}} 640w,
+                             {{asset($image->image1280)}} 1280w,
+                             {{asset($image->image1920)}} 1920w
+                             "
+                            sizes="(min-width: 1040px) calc(11.99vw - 16px), (min-width: 780px) calc(20vw - 15px), calc(47.39vw - 9px)"
+                            src="{{$image->image}}" alt="Image of house"/>
                         <form method="POST" action="/image/{{$image->id}}/delete">
                             @csrf
                             @method('DELETE')
