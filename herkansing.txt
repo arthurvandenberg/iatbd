@@ -1,0 +1,8 @@
+
+Backend: 
+	Routes: Verbeterde verbs bij routes
+
+Frontend: 
+	Semantics: Gewerkt aan article/section usage i.p.v. divs.
+	BEM: Ongebruikte libraries met css verwijderd zodat er minder > selectors in codebase zitten.
+	Responsive images: Images responsive gemaakt.
